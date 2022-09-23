@@ -1,0 +1,642 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="employee" format="xml">
+      <types:example format="xml" element="{http://www.adatum.com}Employees" location="examples/employeesInput.xml"/>
+    </types:type>
+    <types:type name="inputJsonPayload" format="json">
+      <types:shape format="weave" example="examples/packageInputJsonPayload.json"><![CDATA[%dw 2.0
+
+type inputJsonPayload = {|
+  releasedDate: Null, 
+  ProductFamily: Array<{|    assignedToId: String,     requested: Boolean,     assignedToName: String,     "type": String  |}>, 
+  customerState: String, 
+  updateDate: Number {"typeId": "double"}, 
+  marketSize: Null, 
+  properPackage: Boolean, 
+  groupSalesOffice: Null, 
+  packageType: String, 
+  quoteID: Null, 
+  products: Array<String>, 
+  preparedBy: Null, 
+  userLevel: Null, 
+  packageName: String, 
+  Rationale: Null, 
+  marketSegment: Null, 
+  expirationDate: Null, 
+  createDate: Number {"typeId": "double"}, 
+  applicationVersion: Null, 
+  Comment: Null, 
+  packageId: Number {"typeId": "int"}, 
+  sandbox: Boolean, 
+  Plan: Array<{|    Zip: Null,     zipCode: Null,     EligibilityClass: Array<{|      Zip: Null,       FirstDayHospitalization: Null,       PremiumMaxBenPrdSelectSickness: Array<Any>, 
+      AfterBenefitsHaveBeenPayableFor: Array<Any>, 
+      PlanDesign: Array<{|        DomesticPartnerEligible: Boolean,         pdCode: Null,         BenefitLevel: Null,         planDesignName: String,         DependentEligibility: Array<String>, 
+        planDesignId: Number {"typeId": "int"}, 
+        pdType: String, 
+        Benefits: Array<Any>, 
+        pctGiVlm: Null, 
+        RateGuaranteePeriod: Null, 
+        AdditionalComments: Null, 
+        EligibilityWaitingPeriod: Null, 
+        ConversionAndPortability: {|
+          ConversionNumberOfDaysToApply: Number {"typeId": "int"}, 
+          PortabilityEligibility: String, 
+          PortabilityDurationYears: Number {"typeId": "int"}, 
+          PortabilityDurationAge: Null, 
+          PortabilityDuration: String
+        |}, 
+        PortPlusIncluded: Null, 
+        MultiSICCode: Array<Any>, 
+        EligibilityDefinitionPerClass: Null, 
+        ADDBenefitType: Null, 
+        ReplaceExternalCoverage: Null, 
+        WaiverOfPremium: {|
+          WaiverOfPremiumUpToAge: Number {"typeId": "int"}, 
+          ContinuationOfDisabilityStartingAge: Number {"typeId": "int"}, 
+          WaiverOfPremiumDurationAge: Number {"typeId": "int"}, 
+          WaiverOfPremiumWaitingPeriod: Number {"typeId": "int"}, 
+          ContinuationOfDisabilityDurationMonths: Number {"typeId": "int"}, 
+          ContinuationOfDisabilityDuration: String, 
+          WaiverOfPremiumDuration: String
+        |}, 
+        ExtendedDeathBenefit: {|
+          ExtendedDeathBenefitUpToAge: Number {"typeId": "int"}, 
+          ExtendedDeathBenefit: Boolean
+        |}, 
+        RateBasis: Null, 
+        BuyUpRateExp: Null, 
+        index: Null, 
+        BenefitApplies: Null, 
+        Portability: Null, 
+        Coverage: Array<{|          SpouseMaximumIssueAge: Null,           EmployerContributionPercentOfPremium: Null,           ParticipationInfo: Array<Any>, 
+          IncludeTargetParticipationOnProposal: Null, 
+          ExpectedParticipation: Null, 
+          MatchSpouseAndEERates: Null, 
+          EnrollmentGroup: Array<Any>, 
+          CurrentRateSelection: Null, 
+          ClaimAdmin: Array<Any>, 
+          Manual: {| OtherAdjustments: {| ManualOtherAdjustments: Number {"typeId": "int"} |} |}, 
+          CombinedCoverage: Array<Any>, 
+          TypeCov: Null, 
+          AdjustedBaseline: {|
+            RTWAutomated: Array<Any>, 
+            SpecialRiskWar: Array<Any>, 
+            Telephonic: Array<Any>, 
+            CTS: {|
+              Comment: Null, 
+              CTS: Null, 
+              Rationale: Null
+            |}, 
+            RegularAdmin: {|
+              Comment: Null, 
+              RegularAdmin: Null, 
+              Rationale: Null
+            |}, 
+            Tax: {|
+              Comment: Null, 
+              Tax: Null, 
+              Rationale: Null
+            |}, 
+            AdditionalAdjustments: {|
+              Comment: Null, 
+              Rationale: Null, 
+              AddAdj: Null
+            |}, 
+            PEPMCommission: Array<Any>, 
+            Union: Array<Any>, 
+            RVAF: {|
+              Comment: Null, 
+              Rationale: Null, 
+              RVAF: Null
+            |}, 
+            GradedPlan: Array<Any>, 
+            ThirdPartyReimbursements: {|
+              Comment: Null, 
+              Rationale: Null, 
+              ThirdPartyReimburse: Null
+            |}, 
+            OtherRetention: {|
+              Comment: Null, 
+              OtherRetention: Null, 
+              Rationale: Null
+            |}, 
+            TelephonicFMLA: Array<Any>, 
+            AdditionalAdmin: {|
+              Comment: Null, 
+              Rationale: Null, 
+              AddAdmin: Null
+            |}, 
+            TelephonicTollFree: Array<Any>, 
+            ExperienceCredibility: {|
+              Comment: Null, 
+              Rationale: Null, 
+              Cred: Number {"typeId": "int"}
+            |}, 
+            OtherAdjustmentsBlending: Array<Any>, 
+            NoExperienceLoad: Array<Any>, 
+            Enrollment: {|
+              Comment: Null, 
+              Enroll: Null, 
+              Rationale: Null
+            |}, 
+            ClaimsAdmin: Array<Any>, 
+            PerformGuar: {|
+              PerformGuar: Null, 
+              Comment: Null, 
+              Rationale: Null
+            |}, 
+            TwentyFour7IntakeFMLA: Array<Any>, 
+            RTWLive: Array<Any>, 
+            SpecialRiskOther: Array<Any>, 
+            FICAMatch: Array<Any>, 
+            AgingTrendFactor: {|
+              Comment: Null, 
+              Rationale: Null, 
+              AgingTrend: Null
+            |}, 
+            PaymentFrequency: Array<Any>, 
+            PEPMThrdPrtyChrg: Array<Any>, 
+            AccumulatedDeficitBOP: {|
+              Comment: Null, 
+              AccumBOP: Null, 
+              Rationale: Null
+            |}, 
+            EnrollmentCost: Array<Any>, 
+            TwentyFour7IntakeAddOn: Array<Any>, 
+            Conversions: {|
+              Comment: Null, 
+              Conver: Null, 
+              Rationale: Null
+            |}, 
+            LifeRecordKeeping: {|
+              LifeRecordKeep: Null, 
+              Comment: Null, 
+              Rationale: Null
+            |}, 
+            EnrollmentFactor: {|
+              Comment: Null, 
+              EnrollmentFactor: Null, 
+              Rationale: Null
+            |}, 
+            SpecialRiskAvaiation: Array<Any>, 
+            Margin: {|
+              Comment: Null, 
+              Rationale: Null, 
+              Margin: Null
+            |}
+          |}, 
+          MaxBenefitAsPercentageOfEEBenefit: Null, 
+          BasicEstimatedTobaccoUsage: Null, 
+          RateStructureGroup: {|
+            SmokerStatusApplies: Null, 
+            GenderApplies: Null, 
+            RateFrequency: Null, 
+            BilledRate: Null, 
+            RateBasis: Null, 
+            BilledVolume: Null, 
+            VolumeUsedInRating: Null, 
+            BilledLives: Null, 
+            AgeBandApplies: Null, 
+            BilledPremium: Null
+          |}, 
+          CovTermsAtRet: Null, 
+          OptProvisions: Array<Any>, 
+          Child: Array<Any>, 
+          AgeDetermination: Null, 
+          UnitsOf: Null, 
+          StepRated: Null, 
+          SpouseOrChildMinimum: Null, 
+          CoverageAmount: Null, 
+          PortabilityOption: Array<Any>, 
+          IncrementalRangeMinimum: Null, 
+          EliminationPeriod: Array<Any>, 
+          AgeReductions: {|
+            BenefitReductionSchedule: Null, 
+            RoundedToIndicator: Null, 
+            ReductionBasis: Null, 
+            AgeReductionSchedule: Null, 
+            ReductionRoundedToAmount: Null, 
+            AgeReductType: Null, 
+            CustomSchedules: Null
+          |}, 
+          BenefitAsPercentageOfEEBenefit: Null, 
+          BenefitReduction: Null, 
+          Accident: Array<Any>, 
+          Spouse: Array<Any>, 
+          AdjustedManual: {|
+            Participation: Array<Any>, 
+            EmployerFinancialHealth: Array<Any>, 
+            ExperienceLoad: {|
+              Comment: Null, 
+              ExperienceLoad: Null, 
+              Rationale: Null
+            |}, 
+            ThirdPartyLiabProvision: Array<Any>, 
+            RTWIncentive: Array<Any>, 
+            ExpectedParticipation: Array<Any>, 
+            FortyHrWWLmtProvision: Array<Any>, 
+            ResidualBenefitProvision: Array<Any>, 
+            DisabledNoListLoad: {|
+              Comment: Null, 
+              DisabledNoListLoad: Null, 
+              Rationale: Null
+            |}, 
+            ContributoryPlanFactor: Array<Any>, 
+            EmployerWorkEnvironment: Array<Any>, 
+            TargetPlanDesign: Array<Any>, 
+            RateGuaranteeAdj: Array<Any>, 
+            OtherOffsets: Array<Any>, 
+            WaiverSICFactor: {|
+              WaiverSICFactor: Null, 
+              Comment: Null, 
+              Rationale: Null
+            |}, 
+            CaseSizeFactor: Array<Any>, 
+            BuyUpLoad: Array<Any>, 
+            RateGuaranteeLoad: Array<Any>, 
+            DefinitionOfDisability: Array<Any>, 
+            SurvivorBenefit: Array<Any>, 
+            ReplacementRatio: Array<Any>, 
+            PreExBenefit: Array<Any>, 
+            FICAMatch: Array<Any>, 
+            IndustryFactor: {|
+              Comment: Null, 
+              Rationale: Null, 
+              IndustryFactor: Null
+            |}, 
+            WaitingPeriodAdjFactor: Array<Any>, 
+            PrexistingCondExclusionProvision: Array<Any>, 
+            OtherAdjustments: {|
+              OtherAdjustments: Null, 
+              Comment: Null, 
+              Rationale: Null
+            |}, 
+            TrueUpFactor: Array<Any>, 
+            DisProvLoad: {|
+              Comment: Null, 
+              DisProvLoad: Null, 
+              Rationale: Null
+            |}, 
+            AggregateOccupationAdj: Array<Any>, 
+            ManualRateIntelligence: Array<Any>, 
+            ReturnToWorkCulture: Array<Any>, 
+            ClaimPaymentFrequency: Array<Any>, 
+            BenefitMaximum: Array<Any>, 
+            AreaFactor: {|
+              Comment: Null, 
+              AreaFactor: Null, 
+              Rationale: Null
+            |}, 
+            EffectiveDateAdjustment: {|
+              Comment: Null, 
+              EffectiveDateAdjustment: Null, 
+              Rationale: Null
+            |}, 
+            Waiver: Array<Any>, 
+            CABFactor: {|
+              Comment: Null, 
+              CABFactor: Null, 
+              Rationale: Null
+            |}, 
+            WaiverDefDis: Array<Any>, 
+            SalaryAdjustmentFactor: {|
+              Comment: Null, 
+              SalaryAdjustmentFactor: Null, 
+              Rationale: Null
+            |}, 
+            MaternityBenefit: Array<Any>, 
+            STDIntegration: Array<Any>, 
+            IndustryOutlook: Array<Any>
+          |}, 
+          PEPMLives: Null, 
+          Margin: Array<Any>, 
+          SpouseOrChildPercentOfEmployeeAmount: Null, 
+          Sickness: Array<Any>, 
+          TotalMaxiumumBenefitMultiplier: Null, 
+          SpouseOrChildMaximum: Null, 
+          DomesticPartners: Null, 
+          DisabilityProvision: Array<Any>, 
+          ADDScheduleOfBenefits: Array<Any>, 
+          ExpReqButUnavail: Null, 
+          Demographics: {| CalculationPurpose: String |}, 
+          Pricing: Array<Any>, 
+          EEContributions: Null, 
+          ParticipationPCT: Null, 
+          IncrementalRangeMaximum: Null, 
+          AcceleratedDeathBenefit: Array<Any>, 
+          RateType: Null, 
+          SpouseRatingType: Null, 
+          WaiveSpouseMaximumIssueAge: Null, 
+          EmployerContributionMonthlyPremium: Null, 
+          AdjustmentTarget: {|
+            RTWAutomated: Array<Any>, 
+            SpecialRiskWar: Array<Any>, 
+            Telephonic: Array<Any>, 
+            CTS: {|
+              Comment: Null, 
+              CTS: Null, 
+              Rationale: Null
+            |}, 
+            RegularAdmin: {|
+              Comment: Null, 
+              RegularAdmin: Null, 
+              Rationale: Null
+            |}, 
+            AdditionalAdjustments: {|
+              Comment: Null, 
+              Rationale: Null, 
+              AddAdj: Null
+            |}, 
+            Union: Array<Any>, 
+            RVAF: Array<Any>, 
+            GradedPlan: Array<Any>, 
+            BUC: Array<Any>, 
+            OtherRetention: {|
+              Comment: Null, 
+              OtherRetention: Null, 
+              Rationale: Null
+            |}, 
+            TelephonicFMLA: Array<Any>, 
+            AdditionalAdmin: {|
+              Comment: Null, 
+              Rationale: Null, 
+              AddAdmin: Null
+            |}, 
+            TelephonicTollFree: Array<Any>, 
+            ExperienceCredibility: {|
+              Comment: Null, 
+              Rationale: Null, 
+              Cred: Number {"typeId": "int"}
+            |}, 
+            OtherAdjustmentsBlending: Array<Any>, 
+            NoExperienceLoad: Array<Any>, 
+            ManualClaimRate: Array<Any>, 
+            Profit: Array<Any>, 
+            TargetLossRatio: Array<Any>, 
+            ClaimsAdmin: Array<Any>, 
+            ProposedBUC: Array<Any>, 
+            PerformGuar: {|
+              PerformGuar: Null, 
+              Comment: Null, 
+              Rationale: Null
+            |}, 
+            PMAdj: Array<Any>, 
+            CashFlow: Array<Any>, 
+            TwentyFour7IntakeFMLA: Array<Any>, 
+            RateGuaranteeLoad: Array<Any>, 
+            RTWLive: Array<Any>, 
+            SpecialRiskOther: Array<Any>, 
+            FICAMatch: Array<Any>, 
+            AgingTrendFactor: {|
+              Comment: Null, 
+              Rationale: Null, 
+              AgingTrend: Null
+            |}, 
+            PaymentFrequency: Array<Any>, 
+            Portability: {|
+              Comment: Null, 
+              Portability: Null, 
+              Rationale: Null
+            |}, 
+            AccumulatedDeficitBOP: Array<Any>, 
+            EnrollmentCost: Array<Any>, 
+            TrueUpFactor: Array<Any>, 
+            TwentyFour7IntakeAddOn: Array<Any>, 
+            MortalityImprovement: {|
+              Comment: Null, 
+              MorImprove: Null, 
+              Rationale: Null
+            |}, 
+            Taxes: Array<Any>, 
+            Conversions: {|
+              Comment: Null, 
+              Conver: Null, 
+              Rationale: Null
+            |}, 
+            InterestAdj: Array<Any>, 
+            PremiumDelay: Array<Any>, 
+            EnrollmentFactor: {|
+              Comment: Null, 
+              EnrollmentFactor: Null, 
+              Rationale: Null
+            |}, 
+            SpecialRiskAvaiation: Array<Any>, 
+            Margin: {|
+              Comment: Null, 
+              Rationale: Null, 
+              Margin: Null
+            |}, 
+            IndustryOutlook: Array<Any>
+          |}, 
+          SameDiagnosisWaitingPeriod: Null, 
+          FamilySchedule: Array<Any>, 
+          ADDRider: Array<Any>, 
+          ChildRatingType: Null, 
+          SpouseEligibleWoutEEEnrollment: Null, 
+          BenefitType: {|
+            UnitsIncrease: Null, 
+            SalaryMultiple9: Null, 
+            SalaryMultiple8: Null, 
+            SalaryMultiple7: Null, 
+            SalaryMultiple6: Null, 
+            SalaryMultiple5: Null, 
+            SalaryMultiple4: Null, 
+            SalaryMultiple3: Null, 
+            SalaryMultiple2: Null, 
+            SalaryMultiple1: Null, 
+            VoluntaryMaximumCombinedWithBasicMaximum: Null, 
+            FlatBenAmt: Number {"typeId": "int"}, 
+            EarningsType: Null, 
+            BenefitMaximumPct: Null, 
+            FlatBenefitAmount9: Null, 
+            FlatBenefitAmount8: Null, 
+            LifeCoverageEndsAtAge: Null, 
+            GuaranteedIssueTimesSalary: Null, 
+            FlatBenefitAmount7: Null, 
+            FlatBenefitAmount6: Null, 
+            CombinedMaximumFlat: Null, 
+            VoluntaryGICombinedWithBasicGI: Null, 
+            FlatBenefitAmount10: Null, 
+            PercentOfBenefit: Null, 
+            RoundingRuleAppliesTo: Null, 
+            FullTimeStudents: Number {"typeId": "int"}, 
+            BirthTo14DaysOld: Null, 
+            UnitsOf: Null, 
+            PercentageBasis: Null, 
+            RoundingRule: Null, 
+            BenefitLevelIncrease: Null, 
+            FlatBenefitAmount1: Null, 
+            SalaryMultiple10: Null, 
+            CombinedTimesSalary: Null, 
+            FlatBenefitAmount5: Null, 
+            FlatBenefitAmount4: Null, 
+            Units: Null, 
+            FlatBenefitAmount3: Null, 
+            FlatBenefitAmount2: Null, 
+            BenefitMinimum: Null, 
+            BenefitType: String, 
+            TypeOfAnnualEnrollmentIncrease: Null, 
+            NonFullTimeStudents: Null, 
+            GuaranteedIssueAmount: Null, 
+            BenefitMaximum: Null, 
+            Days14To6MonthsOld: Null, 
+            RoundingAmount: Null
+          |}, 
+          TobaccoStatus: Null, 
+          SpouseBenefitAsPercentageOfEEBenefit: Null, 
+          CompsychException: Null, 
+          RatingBasis: Null, 
+          EnhancedOptions: Array<Any>, 
+          DependentChildEligibleWOutEEEnrollment: Null, 
+          Increments: Null, 
+          ChildMaximumIssueAge: Null, 
+          InitialMinimumParticipation: Null, 
+          PlanSchedule: Array<Any>, 
+          SpouseOrChildSingleFlatAmount: Null
+        |}>, 
+        MinimumHoursRequirement: Null, 
+        ClassType: Null, 
+        Census: Array<Any>, 
+        PremPostTaxGrossUp: Null, 
+        DependentEligibleWithoutEEEnrollment: Boolean, 
+        EligibilityWaitingDesc: Null, 
+        planDesignDescription: Null, 
+        malePct: Null, 
+        MatchVoluntaryLifeBenefits: Null, 
+        ControlNumber: Null, 
+        ADDType: Null
+      |}>, 
+      eligibilityClassType: String, 
+      Limitations: Null, 
+      PremMaxBenPrdSelectAcc: Null, 
+      ApplyExperience: Null, 
+      EmployeeEligibility: Null, 
+      LocationName: String, 
+      EducatorDisabilityEliminationPeriod: Null, 
+      eligibilityClassSubType: String, 
+      EligibilityWaitingPeriod: {|
+        EligibilityWaitingPeriod: String, 
+        EligibilityWaitingPeriodMonths: Null, 
+        EligibilityWaitingPeriodOther: Null, 
+        EligibilityWaitingPeriodDays: Number {"typeId": "int"}
+      |}, 
+      eligibilityClassId: Number {"typeId": "int"}, 
+      PremMaxBenPrdSlctSickness: Null, 
+      BuyUpChocies: Array<Any>, 
+      SelectMaxBenPrdAcc: Null, 
+      DefinitionOfDisabilityConjunction: Null, 
+      EarningsTest: Array<Any>, 
+      AbilityEnhancedLangOpt: Null, 
+      CompositeRateInd: Null, 
+      eligibilityClassName: String, 
+      EligibleEmployees: Null, 
+      DefinitionOfDisability: Null, 
+      DefinitionOfCoveredEarnings: Array<Any>, 
+      SurvivorBenefit: Array<Any>, 
+      index: Null, 
+      MaximumBenefitPeriod: Null, 
+      eligibilityClassDescription: String, 
+      EducatorDisabilityPlanType: Null, 
+      SelectMaxBenPrdSelectSickness: Array<Any>, 
+      PremiumMaxBenPrdSelectAccident: Array<Any>, 
+      State: Null, 
+      SelectMaxBenefitPrdAccident: Array<Any>, 
+      PreExProvision: Null, 
+      MaxBenPeriodGrp: Array<Any>, 
+      SlctMaxBenPrdSlctSickness: Null
+    |}>, 
+    planName: String, 
+    groupSalesOffice: Null, 
+    commPct: Null, 
+    AgeReductionVolumesReduced: Null, 
+    planId: Number {"typeId": "int"}, 
+    contractHolder: String, 
+    IncludeCommission: Null, 
+    situsState: String, 
+    foreignLivesApplies: Null, 
+    ASOBenefitSummary: Null, 
+    censusFileType: Null, 
+    CustomerServiceSupport: Null, 
+    index: Null, 
+    fundingArrangement: String, 
+    proposalExpirationDate: Null, 
+    rateMthglyDate: Number {"typeId": "double"}, 
+    PlanReports: Array<Any>, 
+    Commissions: {|
+      CommissionsGradedScale: Null, 
+      CommissionsFlatValue: Null, 
+      CommissionsType: Null, 
+      CommissionsFlatUnit: Null
+    |}, 
+    ForeignLives: Array<Any>, 
+    PerCaseCh: Null, 
+    BillingBranches: Null, 
+    VolatilityThreshold: Null, 
+    ComPsych: Array<Any>, 
+    EducatorDisabilityPlan: Null, 
+    status: String, 
+    productFamily: String, 
+    ADAErgo: Null, 
+    stateZip: Null, 
+    FundingDevices: Null, 
+    productRatingGroup: Null, 
+    RecordKeepingServices: Null, 
+    PreClassed: Null, 
+    TravelAssistance: Null, 
+    numForeignLives: Null, 
+    IncludeBonus: Null, 
+    offerType: Null, 
+    ASC: Array<Any>, 
+    preparedBy: String, 
+    ForeignLivesApplies: Null, 
+    InitialRateGuaranteePeriod: Array<Any>, 
+    censAsOfDt: Null, 
+    productType: String, 
+    PlanPolicyNumber: String, 
+    createDate: Null, 
+    planType: String, 
+    EnrollmentALaCarte: Null, 
+    FICAMatch: Null, 
+    assginedCensusFileNames: Null, 
+    ComplexCase: Null, 
+    proposalSentDate: Null, 
+    ClaimBranches: Null, 
+    PerformanceGuaranteeDefinition: Array<Any>, 
+    censusEffectiveDate: Null, 
+    rateMethodologyVersion: String, 
+    effectiveDate: Null, 
+    rateGuarantee: Number {"typeId": "int"}, 
+    CovPolicyNumber: {|
+      CovPolicyNumberEntry: Array<{|        situsState: String,         PolicySymbol: String,         PolicyNumber: String,         Product: String,         PolicySymbolAndNumber: String      |}>
+    |}
+  |}>, 
+  rateMthglyDate: Null, 
+  mostLikelyToSell: Boolean, 
+  LTDInforce: Boolean, 
+  autoTasks: Null, 
+  status: String
+|} {"example": "{\\\"releasedDate\\\":null,\\\"ProductFamily\\\":[{\\\"assignedToId\\\":\\\"parker\\\",\\\"requested\\\":true,\\\"assignedToName\\\":\\\"Pat Parker\\\",\\\"type\\\":\\\"Life\\\"}],\\\"customerState\\\":\\\"Delaware\\\",\\\"updateDate\\\":1662549481368,\\\"marketSize\\\":null,\\\"properPackage\\\":true,\\\"groupSalesOffice\\\":null,\\\"packageType\\\":\\\"Standard\\\",\\\"quoteID\\\":null,\\\"products\\\":[\\\"Basic Term Life\\\"],\\\"preparedBy\\\":null,\\\"userLevel\\\":null,\\\"packageName\\\":\\\"Package 1\\\",\\\"Rationale\\\":null,\\\"marketSegment\\\":null,\\\"expirationDate\\\":null,\\\"createDate\\\":1662549481368,\\\"applicationVersion\\\":null,\\\"Comment\\\":null,\\\"packageId\\\":51,\\\"sandbox\\\":false,\\\"Plan\\\":[{\\\"Zip\\\":null,\\\"zipCode\\\":null,\\\"EligibilityClass\\\":[{\\\"Zip\\\":null,\\\"FirstDayHospitalization\\\":null,\\\"PremiumMaxBenPrdSelectSickness\\\":[],\\\"AfterBenefitsHaveBeenPayableFor\\\":[],\\\"PlanDesign\\\":[{\\\"DomesticPartnerEligible\\\":true,\\\"pdCode\\\":null,\\\"BenefitLevel\\\":null,\\\"planDesignName\\\":\\\"Plan Design 1\\\",\\\"DependentEligibility\\\":[\\\"Spouse\\\",\\\"Child(ren)\\\"],\\\"planDesignId\\\":414,\\\"pdType\\\":\\\"Enhanced\\\",\\\"Benefits\\\":[],\\\"pctGiVlm\\\":null,\\\"RateGuaranteePeriod\\\":null,\\\"AdditionalComments\\\":null,\\\"EligibilityWaitingPeriod\\\":null,\\\"ConversionAndPortability\\\":{\\\"ConversionNumberOfDaysToApply\\\":31,\\\"PortabilityEligibility\\\":\\\"Employee\\\",\\\"PortabilityDurationYears\\\":3,\\\"PortabilityDurationAge\\\":null,\\\"PortabilityDuration\\\":\\\"Years\\\"},\\\"PortPlusIncluded\\\":null,\\\"MultiSICCode\\\":[],\\\"EligibilityDefinitionPerClass\\\":null,\\\"ADDBenefitType\\\":null,\\\"ReplaceExternalCoverage\\\":null,\\\"WaiverOfPremium\\\":{\\\"WaiverOfPremiumUpToAge\\\":40,\\\"ContinuationOfDisabilityStartingAge\\\":60,\\\"WaiverOfPremiumDurationAge\\\":65,\\\"WaiverOfPremiumWaitingPeriod\\\":9,\\\"ContinuationOfDisabilityDurationMonths\\\":12,\\\"ContinuationOfDisabilityDuration\\\":\\\"Months\\\",\\\"WaiverOfPremiumDuration\\\":\\\"To Age\\\"},\\\"ExtendedDeathBenefit\\\":{\\\"ExtendedDeathBenefitUpToAge\\\":60,\\\"ExtendedDeathBenefit\\\":true},\\\"RateBasis\\\":null,\\\"BuyUpRateExp\\\":null,\\\"index\\\":null,\\\"BenefitApplies\\\":null,\\\"Portability\\\":null,\\\"Coverage\\\":[{\\\"SpouseMaximumIssueAge\\\":null,\\\"EmployerContributionPercentOfPremium\\\":null,\\\"ParticipationInfo\\\":[],\\\"IncludeTargetParticipationOnProposal\\\":null,\\\"ExpectedParticipation\\\":null,\\\"MatchSpouseAndEERates\\\":null,\\\"EnrollmentGroup\\\":[],\\\"CurrentRateSelection\\\":null,\\\"ClaimAdmin\\\":[],\\\"Manual\\\":{\\\"OtherAdjustments\\\":{\\\"ManualOtherAdjustments\\\":1}},\\\"CombinedCoverage\\\":[],\\\"TypeCov\\\":null,\\\"AdjustedBaseline\\\":{\\\"RTWAutomated\\\":[],\\\"SpecialRiskWar\\\":[],\\\"Telephonic\\\":[],\\\"CTS\\\":{\\\"Comment\\\":null,\\\"CTS\\\":null,\\\"Rationale\\\":null},\\\"RegularAdmin\\\":{\\\"Comment\\\":null,\\\"RegularAdmin\\\":null,\\\"Rationale\\\":null},\\\"Tax\\\":{\\\"Comment\\\":null,\\\"Tax\\\":null,\\\"Rationale\\\":null},\\\"AdditionalAdjustments\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdj\\\":null},\\\"PEPMCommission\\\":[],\\\"Union\\\":[],\\\"RVAF\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"RVAF\\\":null},\\\"GradedPlan\\\":[],\\\"ThirdPartyReimbursements\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"ThirdPartyReimburse\\\":null},\\\"OtherRetention\\\":{\\\"Comment\\\":null,\\\"OtherRetention\\\":null,\\\"Rationale\\\":null},\\\"TelephonicFMLA\\\":[],\\\"AdditionalAdmin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdmin\\\":null},\\\"TelephonicTollFree\\\":[],\\\"ExperienceCredibility\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Cred\\\":0},\\\"OtherAdjustmentsBlending\\\":[],\\\"NoExperienceLoad\\\":[],\\\"Enrollment\\\":{\\\"Comment\\\":null,\\\"Enroll\\\":null,\\\"Rationale\\\":null},\\\"ClaimsAdmin\\\":[],\\\"PerformGuar\\\":{\\\"PerformGuar\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"TwentyFour7IntakeFMLA\\\":[],\\\"RTWLive\\\":[],\\\"SpecialRiskOther\\\":[],\\\"FICAMatch\\\":[],\\\"AgingTrendFactor\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AgingTrend\\\":null},\\\"PaymentFrequency\\\":[],\\\"PEPMThrdPrtyChrg\\\":[],\\\"AccumulatedDeficitBOP\\\":{\\\"Comment\\\":null,\\\"AccumBOP\\\":null,\\\"Rationale\\\":null},\\\"EnrollmentCost\\\":[],\\\"TwentyFour7IntakeAddOn\\\":[],\\\"Conversions\\\":{\\\"Comment\\\":null,\\\"Conver\\\":null,\\\"Rationale\\\":null},\\\"LifeRecordKeeping\\\":{\\\"LifeRecordKeep\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"EnrollmentFactor\\\":{\\\"Comment\\\":null,\\\"EnrollmentFactor\\\":null,\\\"Rationale\\\":null},\\\"SpecialRiskAvaiation\\\":[],\\\"Margin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Margin\\\":null}},\\\"MaxBenefitAsPercentageOfEEBenefit\\\":null,\\\"BasicEstimatedTobaccoUsage\\\":null,\\\"RateStructureGroup\\\":{\\\"SmokerStatusApplies\\\":null,\\\"GenderApplies\\\":null,\\\"RateFrequency\\\":null,\\\"BilledRate\\\":null,\\\"RateBasis\\\":null,\\\"BilledVolume\\\":null,\\\"VolumeUsedInRating\\\":null,\\\"BilledLives\\\":null,\\\"AgeBandApplies\\\":null,\\\"BilledPremium\\\":null},\\\"CovTermsAtRet\\\":null,\\\"OptProvisions\\\":[],\\\"Child\\\":[],\\\"AgeDetermination\\\":null,\\\"UnitsOf\\\":null,\\\"StepRated\\\":null,\\\"SpouseOrChildMinimum\\\":null,\\\"CoverageAmount\\\":null,\\\"PortabilityOption\\\":[],\\\"IncrementalRangeMinimum\\\":null,\\\"EliminationPeriod\\\":[],\\\"AgeReductions\\\":{\\\"BenefitReductionSchedule\\\":null,\\\"RoundedToIndicator\\\":null,\\\"ReductionBasis\\\":null,\\\"AgeReductionSchedule\\\":null,\\\"ReductionRoundedToAmount\\\":null,\\\"AgeReductType\\\":null,\\\"CustomSchedules\\\":null},\\\"BenefitAsPercentageOfEEBenefit\\\":null,\\\"BenefitReduction\\\":null,\\\"Accident\\\":[],\\\"Spouse\\\":[],\\\"AdjustedManual\\\":{\\\"Participation\\\":[],\\\"EmployerFinancialHealth\\\":[],\\\"ExperienceLoad\\\":{\\\"Comment\\\":null,\\\"ExperienceLoad\\\":null,\\\"Rationale\\\":null},\\\"ThirdPartyLiabProvision\\\":[],\\\"RTWIncentive\\\":[],\\\"ExpectedParticipation\\\":[],\\\"FortyHrWWLmtProvision\\\":[],\\\"ResidualBenefitProvision\\\":[],\\\"DisabledNoListLoad\\\":{\\\"Comment\\\":null,\\\"DisabledNoListLoad\\\":null,\\\"Rationale\\\":null},\\\"ContributoryPlanFactor\\\":[],\\\"EmployerWorkEnvironment\\\":[],\\\"TargetPlanDesign\\\":[],\\\"RateGuaranteeAdj\\\":[],\\\"OtherOffsets\\\":[],\\\"WaiverSICFactor\\\":{\\\"WaiverSICFactor\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"CaseSizeFactor\\\":[],\\\"BuyUpLoad\\\":[],\\\"RateGuaranteeLoad\\\":[],\\\"DefinitionOfDisability\\\":[],\\\"SurvivorBenefit\\\":[],\\\"ReplacementRatio\\\":[],\\\"PreExBenefit\\\":[],\\\"FICAMatch\\\":[],\\\"IndustryFactor\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"IndustryFactor\\\":null},\\\"WaitingPeriodAdjFactor\\\":[],\\\"PrexistingCondExclusionProvision\\\":[],\\\"OtherAdjustments\\\":{\\\"OtherAdjustments\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"TrueUpFactor\\\":[],\\\"DisProvLoad\\\":{\\\"Comment\\\":null,\\\"DisProvLoad\\\":null,\\\"Rationale\\\":null},\\\"AggregateOccupationAdj\\\":[],\\\"ManualRateIntelligence\\\":[],\\\"ReturnToWorkCulture\\\":[],\\\"ClaimPaymentFrequency\\\":[],\\\"BenefitMaximum\\\":[],\\\"AreaFactor\\\":{\\\"Comment\\\":null,\\\"AreaFactor\\\":null,\\\"Rationale\\\":null},\\\"EffectiveDateAdjustment\\\":{\\\"Comment\\\":null,\\\"EffectiveDateAdjustment\\\":null,\\\"Rationale\\\":null},\\\"Waiver\\\":[],\\\"CABFactor\\\":{\\\"Comment\\\":null,\\\"CABFactor\\\":null,\\\"Rationale\\\":null},\\\"WaiverDefDis\\\":[],\\\"SalaryAdjustmentFactor\\\":{\\\"Comment\\\":null,\\\"SalaryAdjustmentFactor\\\":null,\\\"Rationale\\\":null},\\\"MaternityBenefit\\\":[],\\\"STDIntegration\\\":[],\\\"IndustryOutlook\\\":[]},\\\"PEPMLives\\\":null,\\\"Margin\\\":[],\\\"SpouseOrChildPercentOfEmployeeAmount\\\":null,\\\"Sickness\\\":[],\\\"TotalMaxiumumBenefitMultiplier\\\":null,\\\"SpouseOrChildMaximum\\\":null,\\\"DomesticPartners\\\":null,\\\"DisabilityProvision\\\":[],\\\"ADDScheduleOfBenefits\\\":[],\\\"ExpReqButUnavail\\\":null,\\\"Demographics\\\":{\\\"CalculationPurpose\\\":\\\"Calculation Purpose \\\"},\\\"Pricing\\\":[],\\\"EEContributions\\\":null,\\\"ParticipationPCT\\\":null,\\\"IncrementalRangeMaximum\\\":null,\\\"AcceleratedDeathBenefit\\\":[],\\\"RateType\\\":null,\\\"SpouseRatingType\\\":null,\\\"WaiveSpouseMaximumIssueAge\\\":null,\\\"EmployerContributionMonthlyPremium\\\":null,\\\"AdjustmentTarget\\\":{\\\"RTWAutomated\\\":[],\\\"SpecialRiskWar\\\":[],\\\"Telephonic\\\":[],\\\"CTS\\\":{\\\"Comment\\\":null,\\\"CTS\\\":null,\\\"Rationale\\\":null},\\\"RegularAdmin\\\":{\\\"Comment\\\":null,\\\"RegularAdmin\\\":null,\\\"Rationale\\\":null},\\\"AdditionalAdjustments\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdj\\\":null},\\\"Union\\\":[],\\\"RVAF\\\":[],\\\"GradedPlan\\\":[],\\\"BUC\\\":[],\\\"OtherRetention\\\":{\\\"Comment\\\":null,\\\"OtherRetention\\\":null,\\\"Rationale\\\":null},\\\"TelephonicFMLA\\\":[],\\\"AdditionalAdmin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdmin\\\":null},\\\"TelephonicTollFree\\\":[],\\\"ExperienceCredibility\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Cred\\\":0},\\\"OtherAdjustmentsBlending\\\":[],\\\"NoExperienceLoad\\\":[],\\\"ManualClaimRate\\\":[],\\\"Profit\\\":[],\\\"TargetLossRatio\\\":[],\\\"ClaimsAdmin\\\":[],\\\"ProposedBUC\\\":[],\\\"PerformGuar\\\":{\\\"PerformGuar\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"PMAdj\\\":[],\\\"CashFlow\\\":[],\\\"TwentyFour7IntakeFMLA\\\":[],\\\"RateGuaranteeLoad\\\":[],\\\"RTWLive\\\":[],\\\"SpecialRiskOther\\\":[],\\\"FICAMatch\\\":[],\\\"AgingTrendFactor\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AgingTrend\\\":null},\\\"PaymentFrequency\\\":[],\\\"Portability\\\":{\\\"Comment\\\":null,\\\"Portability\\\":null,\\\"Rationale\\\":null},\\\"AccumulatedDeficitBOP\\\":[],\\\"EnrollmentCost\\\":[],\\\"TrueUpFactor\\\":[],\\\"TwentyFour7IntakeAddOn\\\":[],\\\"MortalityImprovement\\\":{\\\"Comment\\\":null,\\\"MorImprove\\\":null,\\\"Rationale\\\":null},\\\"Taxes\\\":[],\\\"Conversions\\\":{\\\"Comment\\\":null,\\\"Conver\\\":null,\\\"Rationale\\\":null},\\\"InterestAdj\\\":[],\\\"PremiumDelay\\\":[],\\\"EnrollmentFactor\\\":{\\\"Comment\\\":null,\\\"EnrollmentFactor\\\":null,\\\"Rationale\\\":null},\\\"SpecialRiskAvaiation\\\":[],\\\"Margin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Margin\\\":null},\\\"IndustryOutlook\\\":[]},\\\"SameDiagnosisWaitingPeriod\\\":null,\\\"FamilySchedule\\\":[],\\\"ADDRider\\\":[],\\\"ChildRatingType\\\":null,\\\"SpouseEligibleWoutEEEnrollment\\\":null,\\\"BenefitType\\\":{\\\"UnitsIncrease\\\":null,\\\"SalaryMultiple9\\\":null,\\\"SalaryMultiple8\\\":null,\\\"SalaryMultiple7\\\":null,\\\"SalaryMultiple6\\\":null,\\\"SalaryMultiple5\\\":null,\\\"SalaryMultiple4\\\":null,\\\"SalaryMultiple3\\\":null,\\\"SalaryMultiple2\\\":null,\\\"SalaryMultiple1\\\":null,\\\"VoluntaryMaximumCombinedWithBasicMaximum\\\":null,\\\"FlatBenAmt\\\":70,\\\"EarningsType\\\":null,\\\"BenefitMaximumPct\\\":null,\\\"FlatBenefitAmount9\\\":null,\\\"FlatBenefitAmount8\\\":null,\\\"LifeCoverageEndsAtAge\\\":null,\\\"GuaranteedIssueTimesSalary\\\":null,\\\"FlatBenefitAmount7\\\":null,\\\"FlatBenefitAmount6\\\":null,\\\"CombinedMaximumFlat\\\":null,\\\"VoluntaryGICombinedWithBasicGI\\\":null,\\\"FlatBenefitAmount10\\\":null,\\\"PercentOfBenefit\\\":null,\\\"RoundingRuleAppliesTo\\\":null,\\\"FullTimeStudents\\\":3,\\\"BirthTo14DaysOld\\\":null,\\\"UnitsOf\\\":null,\\\"PercentageBasis\\\":null,\\\"RoundingRule\\\":null,\\\"BenefitLevelIncrease\\\":null,\\\"FlatBenefitAmount1\\\":null,\\\"SalaryMultiple10\\\":null,\\\"CombinedTimesSalary\\\":null,\\\"FlatBenefitAmount5\\\":null,\\\"FlatBenefitAmount4\\\":null,\\\"Units\\\":null,\\\"FlatBenefitAmount3\\\":null,\\\"FlatBenefitAmount2\\\":null,\\\"BenefitMinimum\\\":null,\\\"BenefitType\\\":\\\"Flat\\\",\\\"TypeOfAnnualEnrollmentIncrease\\\":null,\\\"NonFullTimeStudents\\\":null,\\\"GuaranteedIssueAmount\\\":null,\\\"BenefitMaximum\\\":null,\\\"Days14To6MonthsOld\\\":null,\\\"RoundingAmount\\\":null},\\\"TobaccoStatus\\\":null,\\\"SpouseBenefitAsPercentageOfEEBenefit\\\":null,\\\"CompsychException\\\":null,\\\"RatingBasis\\\":null,\\\"EnhancedOptions\\\":[],\\\"DependentChildEligibleWOutEEEnrollment\\\":null,\\\"Increments\\\":null,\\\"ChildMaximumIssueAge\\\":null,\\\"InitialMinimumParticipation\\\":null,\\\"PlanSchedule\\\":[],\\\"SpouseOrChildSingleFlatAmount\\\":null},{\\\"SpouseMaximumIssueAge\\\":null,\\\"EmployerContributionPercentOfPremium\\\":null,\\\"ParticipationInfo\\\":[],\\\"IncludeTargetParticipationOnProposal\\\":null,\\\"ExpectedParticipation\\\":null,\\\"MatchSpouseAndEERates\\\":null,\\\"EnrollmentGroup\\\":[],\\\"CurrentRateSelection\\\":\\\"Census Rate\\\",\\\"ClaimAdmin\\\":[],\\\"Manual\\\":{\\\"OtherAdjustments\\\":{\\\"ManualOtherAdjustments\\\":1}},\\\"CombinedCoverage\\\":[],\\\"TypeCov\\\":null,\\\"AdjustedBaseline\\\":{\\\"RTWAutomated\\\":[],\\\"SpecialRiskWar\\\":[],\\\"Telephonic\\\":[],\\\"CTS\\\":{\\\"Comment\\\":null,\\\"CTS\\\":null,\\\"Rationale\\\":null},\\\"RegularAdmin\\\":{\\\"Comment\\\":null,\\\"RegularAdmin\\\":null,\\\"Rationale\\\":null},\\\"Tax\\\":{\\\"Comment\\\":null,\\\"Tax\\\":null,\\\"Rationale\\\":null},\\\"AdditionalAdjustments\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdj\\\":null},\\\"PEPMCommission\\\":[],\\\"Union\\\":[],\\\"RVAF\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"RVAF\\\":null},\\\"GradedPlan\\\":[],\\\"ThirdPartyReimbursements\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"ThirdPartyReimburse\\\":null},\\\"OtherRetention\\\":{\\\"Comment\\\":null,\\\"OtherRetention\\\":null,\\\"Rationale\\\":null},\\\"TelephonicFMLA\\\":[],\\\"AdditionalAdmin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdmin\\\":null},\\\"TelephonicTollFree\\\":[],\\\"ExperienceCredibility\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Cred\\\":0},\\\"OtherAdjustmentsBlending\\\":[],\\\"NoExperienceLoad\\\":[],\\\"Enrollment\\\":{\\\"Comment\\\":null,\\\"Enroll\\\":null,\\\"Rationale\\\":null},\\\"ClaimsAdmin\\\":[],\\\"PerformGuar\\\":{\\\"PerformGuar\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"TwentyFour7IntakeFMLA\\\":[],\\\"RTWLive\\\":[],\\\"SpecialRiskOther\\\":[],\\\"FICAMatch\\\":[],\\\"AgingTrendFactor\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AgingTrend\\\":null},\\\"PaymentFrequency\\\":[],\\\"PEPMThrdPrtyChrg\\\":[],\\\"AccumulatedDeficitBOP\\\":{\\\"Comment\\\":null,\\\"AccumBOP\\\":null,\\\"Rationale\\\":null},\\\"EnrollmentCost\\\":[],\\\"TwentyFour7IntakeAddOn\\\":[],\\\"Conversions\\\":{\\\"Comment\\\":null,\\\"Conver\\\":null,\\\"Rationale\\\":null},\\\"LifeRecordKeeping\\\":{\\\"LifeRecordKeep\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"EnrollmentFactor\\\":[],\\\"SpecialRiskAvaiation\\\":[],\\\"Margin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Margin\\\":null}},\\\"MaxBenefitAsPercentageOfEEBenefit\\\":null,\\\"BasicEstimatedTobaccoUsage\\\":null,\\\"RateStructureGroup\\\":{\\\"SmokerStatusApplies\\\":null,\\\"GenderApplies\\\":null,\\\"RateFrequency\\\":null,\\\"BilledRate\\\":null,\\\"RateBasis\\\":null,\\\"BilledVolume\\\":null,\\\"VolumeUsedInRating\\\":null,\\\"BilledLives\\\":null,\\\"AgeBandApplies\\\":null,\\\"BilledPremium\\\":null},\\\"CovTermsAtRet\\\":null,\\\"OptProvisions\\\":[],\\\"Child\\\":[],\\\"AgeDetermination\\\":null,\\\"UnitsOf\\\":null,\\\"StepRated\\\":null,\\\"SpouseOrChildMinimum\\\":null,\\\"CoverageAmount\\\":null,\\\"PortabilityOption\\\":[],\\\"IncrementalRangeMinimum\\\":null,\\\"EliminationPeriod\\\":[],\\\"AgeReductions\\\":{\\\"BenefitReductionSchedule\\\":null,\\\"RoundedToIndicator\\\":null,\\\"ReductionBasis\\\":null,\\\"AgeReductionSchedule\\\":null,\\\"ReductionRoundedToAmount\\\":null,\\\"AgeReductType\\\":null,\\\"CustomSchedules\\\":null},\\\"BenefitAsPercentageOfEEBenefit\\\":null,\\\"BenefitReduction\\\":null,\\\"Accident\\\":[],\\\"Spouse\\\":[],\\\"AdjustedManual\\\":{\\\"Participation\\\":[],\\\"EmployerFinancialHealth\\\":[],\\\"ExperienceLoad\\\":{\\\"Comment\\\":null,\\\"ExperienceLoad\\\":null,\\\"Rationale\\\":null},\\\"ThirdPartyLiabProvision\\\":[],\\\"RTWIncentive\\\":[],\\\"ExpectedParticipation\\\":[],\\\"FortyHrWWLmtProvision\\\":[],\\\"ResidualBenefitProvision\\\":[],\\\"DisabledNoListLoad\\\":{\\\"Comment\\\":null,\\\"DisabledNoListLoad\\\":null,\\\"Rationale\\\":null},\\\"ContributoryPlanFactor\\\":[],\\\"EmployerWorkEnvironment\\\":[],\\\"TargetPlanDesign\\\":[],\\\"RateGuaranteeAdj\\\":[],\\\"OtherOffsets\\\":[],\\\"WaiverSICFactor\\\":{\\\"WaiverSICFactor\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"CaseSizeFactor\\\":[],\\\"BuyUpLoad\\\":[],\\\"RateGuaranteeLoad\\\":[],\\\"DefinitionOfDisability\\\":[],\\\"SurvivorBenefit\\\":[],\\\"ReplacementRatio\\\":[],\\\"PreExBenefit\\\":[],\\\"FICAMatch\\\":[],\\\"IndustryFactor\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"IndustryFactor\\\":null},\\\"WaitingPeriodAdjFactor\\\":[],\\\"PrexistingCondExclusionProvision\\\":[],\\\"OtherAdjustments\\\":{\\\"OtherAdjustments\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"TrueUpFactor\\\":[],\\\"DisProvLoad\\\":{\\\"Comment\\\":null,\\\"DisProvLoad\\\":null,\\\"Rationale\\\":null},\\\"AggregateOccupationAdj\\\":[],\\\"ManualRateIntelligence\\\":[],\\\"ReturnToWorkCulture\\\":[],\\\"ClaimPaymentFrequency\\\":[],\\\"BenefitMaximum\\\":[],\\\"AreaFactor\\\":{\\\"Comment\\\":null,\\\"AreaFactor\\\":null,\\\"Rationale\\\":null},\\\"EffectiveDateAdjustment\\\":{\\\"Comment\\\":null,\\\"EffectiveDateAdjustment\\\":null,\\\"Rationale\\\":null},\\\"Waiver\\\":[],\\\"CABFactor\\\":{\\\"Comment\\\":null,\\\"CABFactor\\\":null,\\\"Rationale\\\":null},\\\"WaiverDefDis\\\":[],\\\"SalaryAdjustmentFactor\\\":{\\\"Comment\\\":null,\\\"SalaryAdjustmentFactor\\\":null,\\\"Rationale\\\":null},\\\"MaternityBenefit\\\":[],\\\"STDIntegration\\\":[],\\\"IndustryOutlook\\\":[]},\\\"PEPMLives\\\":null,\\\"Margin\\\":[],\\\"SpouseOrChildPercentOfEmployeeAmount\\\":null,\\\"Sickness\\\":[],\\\"TotalMaxiumumBenefitMultiplier\\\":null,\\\"SpouseOrChildMaximum\\\":null,\\\"DomesticPartners\\\":null,\\\"DisabilityProvision\\\":[],\\\"ADDScheduleOfBenefits\\\":[],\\\"ExpReqButUnavail\\\":null,\\\"Demographics\\\":{\\\"CalculationPurpose\\\":\\\"Calculation Purpose \\\"},\\\"Pricing\\\":[],\\\"EEContributions\\\":null,\\\"ParticipationPCT\\\":null,\\\"IncrementalRangeMaximum\\\":null,\\\"AcceleratedDeathBenefit\\\":{\\\"SpouseAcceleratedDeathBenefit\\\":null,\\\"AcceleratedLifeOption\\\":null,\\\"AcceleratedLifeLimitPercent\\\":null,\\\"BenefitMaximum\\\":null,\\\"UpToPctSgn\\\":null,\\\"AcceleratedLifeMonths\\\":null,\\\"AcceleratedLifeMaxAmount\\\":null,\\\"FlatDlrSignAmount\\\":80,\\\"ChildAcceleratedDeathBenefit\\\":null,\\\"AcceleratedDeathBenefit\\\":\\\"Terminal Illness Flat \$\\\",\\\"AcceleratedLifeMinAmount\\\":null,\\\"AcceleratedContinuousConfinement\\\":null},\\\"RateType\\\":null,\\\"SpouseRatingType\\\":null,\\\"WaiveSpouseMaximumIssueAge\\\":null,\\\"EmployerContributionMonthlyPremium\\\":null,\\\"AdjustmentTarget\\\":{\\\"RTWAutomated\\\":[],\\\"SpecialRiskWar\\\":[],\\\"Telephonic\\\":[],\\\"CTS\\\":{\\\"Comment\\\":null,\\\"CTS\\\":null,\\\"Rationale\\\":null},\\\"RegularAdmin\\\":{\\\"Comment\\\":null,\\\"RegularAdmin\\\":null,\\\"Rationale\\\":null},\\\"AdditionalAdjustments\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdj\\\":null},\\\"Union\\\":[],\\\"RVAF\\\":[],\\\"GradedPlan\\\":[],\\\"BUC\\\":[],\\\"OtherRetention\\\":{\\\"Comment\\\":null,\\\"OtherRetention\\\":null,\\\"Rationale\\\":null},\\\"TelephonicFMLA\\\":[],\\\"AdditionalAdmin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdmin\\\":null},\\\"TelephonicTollFree\\\":[],\\\"ExperienceCredibility\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Cred\\\":0},\\\"OtherAdjustmentsBlending\\\":[],\\\"NoExperienceLoad\\\":[],\\\"ManualClaimRate\\\":[],\\\"Profit\\\":[],\\\"TargetLossRatio\\\":[],\\\"ClaimsAdmin\\\":[],\\\"ProposedBUC\\\":[],\\\"PerformGuar\\\":{\\\"PerformGuar\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"PMAdj\\\":[],\\\"CashFlow\\\":[],\\\"TwentyFour7IntakeFMLA\\\":[],\\\"RateGuaranteeLoad\\\":[],\\\"RTWLive\\\":[],\\\"SpecialRiskOther\\\":[],\\\"FICAMatch\\\":[],\\\"AgingTrendFactor\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AgingTrend\\\":null},\\\"PaymentFrequency\\\":[],\\\"Portability\\\":{\\\"Comment\\\":null,\\\"Portability\\\":null,\\\"Rationale\\\":null},\\\"AccumulatedDeficitBOP\\\":[],\\\"EnrollmentCost\\\":[],\\\"TrueUpFactor\\\":[],\\\"TwentyFour7IntakeAddOn\\\":[],\\\"MortalityImprovement\\\":{\\\"Comment\\\":null,\\\"MorImprove\\\":null,\\\"Rationale\\\":null},\\\"Taxes\\\":[],\\\"Conversions\\\":{\\\"Comment\\\":null,\\\"Conver\\\":null,\\\"Rationale\\\":null},\\\"InterestAdj\\\":[],\\\"PremiumDelay\\\":[],\\\"EnrollmentFactor\\\":{\\\"Comment\\\":null,\\\"EnrollmentFactor\\\":null,\\\"Rationale\\\":null},\\\"SpecialRiskAvaiation\\\":[],\\\"Margin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Margin\\\":null},\\\"IndustryOutlook\\\":[]},\\\"SameDiagnosisWaitingPeriod\\\":null,\\\"FamilySchedule\\\":[],\\\"ADDRider\\\":[],\\\"ChildRatingType\\\":null,\\\"SpouseEligibleWoutEEEnrollment\\\":null,\\\"BenefitType\\\":{\\\"UnitsIncrease\\\":null,\\\"SalaryMultiple9\\\":null,\\\"SalaryMultiple8\\\":null,\\\"SalaryMultiple7\\\":null,\\\"SalaryMultiple6\\\":null,\\\"SalaryMultiple5\\\":null,\\\"SalaryMultiple4\\\":null,\\\"SalaryMultiple3\\\":null,\\\"SalaryMultiple2\\\":null,\\\"SalaryMultiple1\\\":null,\\\"VoluntaryMaximumCombinedWithBasicMaximum\\\":null,\\\"FlatBenAmt\\\":70,\\\"EarningsType\\\":null,\\\"BenefitMaximumPct\\\":null,\\\"FlatBenefitAmount9\\\":null,\\\"FlatBenefitAmount8\\\":null,\\\"LifeCoverageEndsAtAge\\\":null,\\\"GuaranteedIssueTimesSalary\\\":3,\\\"FlatBenefitAmount7\\\":null,\\\"FlatBenefitAmount6\\\":null,\\\"CombinedMaximumFlat\\\":50,\\\"VoluntaryGICombinedWithBasicGI\\\":null,\\\"FlatBenefitAmount10\\\":null,\\\"PercentOfBenefit\\\":null,\\\"RoundingRuleAppliesTo\\\":null,\\\"FullTimeStudents\\\":null,\\\"BirthTo14DaysOld\\\":null,\\\"UnitsOf\\\":null,\\\"PercentageBasis\\\":null,\\\"RoundingRule\\\":null,\\\"BenefitLevelIncrease\\\":null,\\\"FlatBenefitAmount1\\\":null,\\\"SalaryMultiple10\\\":null,\\\"CombinedTimesSalary\\\":10,\\\"FlatBenefitAmount5\\\":null,\\\"FlatBenefitAmount4\\\":null,\\\"Units\\\":null,\\\"FlatBenefitAmount3\\\":null,\\\"FlatBenefitAmount2\\\":null,\\\"BenefitMinimum\\\":null,\\\"BenefitType\\\":\\\"Flat\\\",\\\"TypeOfAnnualEnrollmentIncrease\\\":null,\\\"NonFullTimeStudents\\\":null,\\\"GuaranteedIssueAmount\\\":60,\\\"BenefitMaximum\\\":null,\\\"Days14To6MonthsOld\\\":null,\\\"RoundingAmount\\\":null},\\\"TobaccoStatus\\\":null,\\\"SpouseBenefitAsPercentageOfEEBenefit\\\":null,\\\"CompsychException\\\":null,\\\"RatingBasis\\\":null,\\\"EnhancedOptions\\\":[],\\\"DependentChildEligibleWOutEEEnrollment\\\":null,\\\"Increments\\\":null,\\\"ChildMaximumIssueAge\\\":null,\\\"InitialMinimumParticipation\\\":null,\\\"PlanSchedule\\\":[],\\\"SpouseOrChildSingleFlatAmount\\\":null},{\\\"SpouseMaximumIssueAge\\\":null,\\\"EmployerContributionPercentOfPremium\\\":null,\\\"ParticipationInfo\\\":[],\\\"IncludeTargetParticipationOnProposal\\\":null,\\\"ExpectedParticipation\\\":null,\\\"MatchSpouseAndEERates\\\":null,\\\"EnrollmentGroup\\\":[],\\\"CurrentRateSelection\\\":null,\\\"ClaimAdmin\\\":[],\\\"Manual\\\":{\\\"OtherAdjustments\\\":{\\\"ManualOtherAdjustments\\\":1}},\\\"CombinedCoverage\\\":[],\\\"TypeCov\\\":null,\\\"AdjustedBaseline\\\":{\\\"RTWAutomated\\\":[],\\\"SpecialRiskWar\\\":[],\\\"Telephonic\\\":[],\\\"CTS\\\":{\\\"Comment\\\":null,\\\"CTS\\\":null,\\\"Rationale\\\":null},\\\"RegularAdmin\\\":{\\\"Comment\\\":null,\\\"RegularAdmin\\\":null,\\\"Rationale\\\":null},\\\"Tax\\\":{\\\"Comment\\\":null,\\\"Tax\\\":null,\\\"Rationale\\\":null},\\\"AdditionalAdjustments\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdj\\\":null},\\\"PEPMCommission\\\":[],\\\"Union\\\":[],\\\"RVAF\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"RVAF\\\":null},\\\"GradedPlan\\\":[],\\\"ThirdPartyReimbursements\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"ThirdPartyReimburse\\\":null},\\\"OtherRetention\\\":{\\\"Comment\\\":null,\\\"OtherRetention\\\":null,\\\"Rationale\\\":null},\\\"TelephonicFMLA\\\":[],\\\"AdditionalAdmin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdmin\\\":null},\\\"TelephonicTollFree\\\":[],\\\"ExperienceCredibility\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Cred\\\":0},\\\"OtherAdjustmentsBlending\\\":[],\\\"NoExperienceLoad\\\":[],\\\"Enrollment\\\":{\\\"Comment\\\":null,\\\"Enroll\\\":null,\\\"Rationale\\\":null},\\\"ClaimsAdmin\\\":[],\\\"PerformGuar\\\":{\\\"PerformGuar\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"TwentyFour7IntakeFMLA\\\":[],\\\"RTWLive\\\":[],\\\"SpecialRiskOther\\\":[],\\\"FICAMatch\\\":[],\\\"AgingTrendFactor\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AgingTrend\\\":null},\\\"PaymentFrequency\\\":[],\\\"PEPMThrdPrtyChrg\\\":[],\\\"AccumulatedDeficitBOP\\\":{\\\"Comment\\\":null,\\\"AccumBOP\\\":null,\\\"Rationale\\\":null},\\\"EnrollmentCost\\\":[],\\\"TwentyFour7IntakeAddOn\\\":[],\\\"Conversions\\\":{\\\"Comment\\\":null,\\\"Conver\\\":null,\\\"Rationale\\\":null},\\\"LifeRecordKeeping\\\":{\\\"LifeRecordKeep\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"EnrollmentFactor\\\":{\\\"Comment\\\":null,\\\"EnrollmentFactor\\\":null,\\\"Rationale\\\":null},\\\"SpecialRiskAvaiation\\\":[],\\\"Margin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Margin\\\":null}},\\\"MaxBenefitAsPercentageOfEEBenefit\\\":null,\\\"BasicEstimatedTobaccoUsage\\\":null,\\\"RateStructureGroup\\\":{\\\"SmokerStatusApplies\\\":null,\\\"GenderApplies\\\":null,\\\"RateFrequency\\\":null,\\\"BilledRate\\\":null,\\\"RateBasis\\\":null,\\\"BilledVolume\\\":null,\\\"VolumeUsedInRating\\\":null,\\\"BilledLives\\\":null,\\\"AgeBandApplies\\\":null,\\\"BilledPremium\\\":null},\\\"CovTermsAtRet\\\":null,\\\"OptProvisions\\\":[],\\\"Child\\\":[],\\\"AgeDetermination\\\":null,\\\"UnitsOf\\\":null,\\\"StepRated\\\":null,\\\"SpouseOrChildMinimum\\\":null,\\\"CoverageAmount\\\":null,\\\"PortabilityOption\\\":[],\\\"IncrementalRangeMinimum\\\":null,\\\"EliminationPeriod\\\":[],\\\"AgeReductions\\\":{\\\"BenefitReductionSchedule\\\":null,\\\"RoundedToIndicator\\\":null,\\\"ReductionBasis\\\":null,\\\"AgeReductionSchedule\\\":null,\\\"ReductionRoundedToAmount\\\":null,\\\"AgeReductType\\\":null,\\\"CustomSchedules\\\":null},\\\"BenefitAsPercentageOfEEBenefit\\\":null,\\\"BenefitReduction\\\":null,\\\"Accident\\\":[],\\\"Spouse\\\":[],\\\"AdjustedManual\\\":{\\\"Participation\\\":[],\\\"EmployerFinancialHealth\\\":[],\\\"ExperienceLoad\\\":{\\\"Comment\\\":null,\\\"ExperienceLoad\\\":null,\\\"Rationale\\\":null},\\\"ThirdPartyLiabProvision\\\":[],\\\"RTWIncentive\\\":[],\\\"ExpectedParticipation\\\":[],\\\"FortyHrWWLmtProvision\\\":[],\\\"ResidualBenefitProvision\\\":[],\\\"DisabledNoListLoad\\\":{\\\"Comment\\\":null,\\\"DisabledNoListLoad\\\":null,\\\"Rationale\\\":null},\\\"ContributoryPlanFactor\\\":[],\\\"EmployerWorkEnvironment\\\":[],\\\"TargetPlanDesign\\\":[],\\\"RateGuaranteeAdj\\\":[],\\\"OtherOffsets\\\":[],\\\"WaiverSICFactor\\\":{\\\"WaiverSICFactor\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"CaseSizeFactor\\\":[],\\\"BuyUpLoad\\\":[],\\\"RateGuaranteeLoad\\\":[],\\\"DefinitionOfDisability\\\":[],\\\"SurvivorBenefit\\\":[],\\\"ReplacementRatio\\\":[],\\\"PreExBenefit\\\":[],\\\"FICAMatch\\\":[],\\\"IndustryFactor\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"IndustryFactor\\\":null},\\\"WaitingPeriodAdjFactor\\\":[],\\\"PrexistingCondExclusionProvision\\\":[],\\\"OtherAdjustments\\\":{\\\"OtherAdjustments\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"TrueUpFactor\\\":[],\\\"DisProvLoad\\\":{\\\"Comment\\\":null,\\\"DisProvLoad\\\":null,\\\"Rationale\\\":null},\\\"AggregateOccupationAdj\\\":[],\\\"ManualRateIntelligence\\\":[],\\\"ReturnToWorkCulture\\\":[],\\\"ClaimPaymentFrequency\\\":[],\\\"BenefitMaximum\\\":[],\\\"AreaFactor\\\":{\\\"Comment\\\":null,\\\"AreaFactor\\\":null,\\\"Rationale\\\":null},\\\"EffectiveDateAdjustment\\\":{\\\"Comment\\\":null,\\\"EffectiveDateAdjustment\\\":null,\\\"Rationale\\\":null},\\\"Waiver\\\":[],\\\"CABFactor\\\":{\\\"Comment\\\":null,\\\"CABFactor\\\":null,\\\"Rationale\\\":null},\\\"WaiverDefDis\\\":[],\\\"SalaryAdjustmentFactor\\\":{\\\"Comment\\\":null,\\\"SalaryAdjustmentFactor\\\":null,\\\"Rationale\\\":null},\\\"MaternityBenefit\\\":[],\\\"STDIntegration\\\":[],\\\"IndustryOutlook\\\":[]},\\\"PEPMLives\\\":null,\\\"Margin\\\":[],\\\"SpouseOrChildPercentOfEmployeeAmount\\\":null,\\\"Sickness\\\":[],\\\"TotalMaxiumumBenefitMultiplier\\\":null,\\\"SpouseOrChildMaximum\\\":null,\\\"DomesticPartners\\\":null,\\\"DisabilityProvision\\\":[],\\\"ADDScheduleOfBenefits\\\":[],\\\"ExpReqButUnavail\\\":null,\\\"Demographics\\\":{\\\"CalculationPurpose\\\":\\\"Calculation Purpose \\\"},\\\"Pricing\\\":[],\\\"EEContributions\\\":null,\\\"ParticipationPCT\\\":null,\\\"IncrementalRangeMaximum\\\":null,\\\"AcceleratedDeathBenefit\\\":{\\\"SpouseAcceleratedDeathBenefit\\\":null,\\\"AcceleratedLifeOption\\\":null,\\\"AcceleratedLifeLimitPercent\\\":null,\\\"BenefitMaximum\\\":null,\\\"UpToPctSgn\\\":null,\\\"AcceleratedLifeMonths\\\":null,\\\"AcceleratedLifeMaxAmount\\\":null,\\\"FlatDlrSignAmount\\\":80,\\\"ChildAcceleratedDeathBenefit\\\":null,\\\"AcceleratedDeathBenefit\\\":\\\"Terminal Illness Flat \$\\\",\\\"AcceleratedLifeMinAmount\\\":null,\\\"AcceleratedContinuousConfinement\\\":null},\\\"RateType\\\":null,\\\"SpouseRatingType\\\":null,\\\"WaiveSpouseMaximumIssueAge\\\":null,\\\"EmployerContributionMonthlyPremium\\\":null,\\\"AdjustmentTarget\\\":{\\\"RTWAutomated\\\":[],\\\"SpecialRiskWar\\\":[],\\\"Telephonic\\\":[],\\\"CTS\\\":{\\\"Comment\\\":null,\\\"CTS\\\":null,\\\"Rationale\\\":null},\\\"RegularAdmin\\\":{\\\"Comment\\\":null,\\\"RegularAdmin\\\":null,\\\"Rationale\\\":null},\\\"AdditionalAdjustments\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdj\\\":null},\\\"Union\\\":[],\\\"RVAF\\\":[],\\\"GradedPlan\\\":[],\\\"BUC\\\":[],\\\"OtherRetention\\\":{\\\"Comment\\\":null,\\\"OtherRetention\\\":null,\\\"Rationale\\\":null},\\\"TelephonicFMLA\\\":[],\\\"AdditionalAdmin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AddAdmin\\\":null},\\\"TelephonicTollFree\\\":[],\\\"ExperienceCredibility\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Cred\\\":0},\\\"OtherAdjustmentsBlending\\\":[],\\\"NoExperienceLoad\\\":[],\\\"ManualClaimRate\\\":[],\\\"Profit\\\":[],\\\"TargetLossRatio\\\":[],\\\"ClaimsAdmin\\\":[],\\\"ProposedBUC\\\":[],\\\"PerformGuar\\\":{\\\"PerformGuar\\\":null,\\\"Comment\\\":null,\\\"Rationale\\\":null},\\\"PMAdj\\\":[],\\\"CashFlow\\\":[],\\\"TwentyFour7IntakeFMLA\\\":[],\\\"RateGuaranteeLoad\\\":[],\\\"RTWLive\\\":[],\\\"SpecialRiskOther\\\":[],\\\"FICAMatch\\\":[],\\\"AgingTrendFactor\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"AgingTrend\\\":null},\\\"PaymentFrequency\\\":[],\\\"Portability\\\":{\\\"Comment\\\":null,\\\"Portability\\\":null,\\\"Rationale\\\":null},\\\"AccumulatedDeficitBOP\\\":[],\\\"EnrollmentCost\\\":[],\\\"TrueUpFactor\\\":[],\\\"TwentyFour7IntakeAddOn\\\":[],\\\"MortalityImprovement\\\":{\\\"Comment\\\":null,\\\"MorImprove\\\":null,\\\"Rationale\\\":null},\\\"Taxes\\\":[],\\\"Conversions\\\":{\\\"Comment\\\":null,\\\"Conver\\\":null,\\\"Rationale\\\":null},\\\"InterestAdj\\\":[],\\\"PremiumDelay\\\":[],\\\"EnrollmentFactor\\\":{\\\"Comment\\\":null,\\\"EnrollmentFactor\\\":null,\\\"Rationale\\\":null},\\\"SpecialRiskAvaiation\\\":[],\\\"Margin\\\":{\\\"Comment\\\":null,\\\"Rationale\\\":null,\\\"Margin\\\":null},\\\"IndustryOutlook\\\":[]},\\\"SameDiagnosisWaitingPeriod\\\":null,\\\"FamilySchedule\\\":[],\\\"ADDRider\\\":[],\\\"ChildRatingType\\\":null,\\\"SpouseEligibleWoutEEEnrollment\\\":null,\\\"BenefitType\\\":{\\\"UnitsIncrease\\\":null,\\\"SalaryMultiple9\\\":null,\\\"SalaryMultiple8\\\":null,\\\"SalaryMultiple7\\\":null,\\\"SalaryMultiple6\\\":null,\\\"SalaryMultiple5\\\":null,\\\"SalaryMultiple4\\\":null,\\\"SalaryMultiple3\\\":null,\\\"SalaryMultiple2\\\":null,\\\"SalaryMultiple1\\\":null,\\\"VoluntaryMaximumCombinedWithBasicMaximum\\\":null,\\\"FlatBenAmt\\\":70,\\\"EarningsType\\\":null,\\\"BenefitMaximumPct\\\":null,\\\"FlatBenefitAmount9\\\":null,\\\"FlatBenefitAmount8\\\":null,\\\"LifeCoverageEndsAtAge\\\":70,\\\"GuaranteedIssueTimesSalary\\\":null,\\\"FlatBenefitAmount7\\\":null,\\\"FlatBenefitAmount6\\\":null,\\\"CombinedMaximumFlat\\\":null,\\\"VoluntaryGICombinedWithBasicGI\\\":null,\\\"FlatBenefitAmount10\\\":null,\\\"PercentOfBenefit\\\":null,\\\"RoundingRuleAppliesTo\\\":null,\\\"FullTimeStudents\\\":null,\\\"BirthTo14DaysOld\\\":null,\\\"UnitsOf\\\":null,\\\"PercentageBasis\\\":null,\\\"RoundingRule\\\":null,\\\"BenefitLevelIncrease\\\":null,\\\"FlatBenefitAmount1\\\":null,\\\"SalaryMultiple10\\\":null,\\\"CombinedTimesSalary\\\":null,\\\"FlatBenefitAmount5\\\":null,\\\"FlatBenefitAmount4\\\":null,\\\"Units\\\":null,\\\"FlatBenefitAmount3\\\":null,\\\"FlatBenefitAmount2\\\":null,\\\"BenefitMinimum\\\":null,\\\"BenefitType\\\":\\\"Flat\\\",\\\"TypeOfAnnualEnrollmentIncrease\\\":null,\\\"NonFullTimeStudents\\\":null,\\\"GuaranteedIssueAmount\\\":30,\\\"BenefitMaximum\\\":null,\\\"Days14To6MonthsOld\\\":null,\\\"RoundingAmount\\\":null},\\\"TobaccoStatus\\\":null,\\\"SpouseBenefitAsPercentageOfEEBenefit\\\":null,\\\"CompsychException\\\":null,\\\"RatingBasis\\\":null,\\\"EnhancedOptions\\\":[],\\\"DependentChildEligibleWOutEEEnrollment\\\":null,\\\"Increments\\\":null,\\\"ChildMaximumIssueAge\\\":null,\\\"InitialMinimumParticipation\\\":null,\\\"PlanSchedule\\\":[],\\\"SpouseOrChildSingleFlatAmount\\\":null}],\\\"MinimumHoursRequirement\\\":null,\\\"ClassType\\\":null,\\\"Census\\\":[],\\\"PremPostTaxGrossUp\\\":null,\\\"DependentEligibleWithoutEEEnrollment\\\":true,\\\"EligibilityWaitingDesc\\\":null,\\\"planDesignDescription\\\":null,\\\"malePct\\\":null,\\\"MatchVoluntaryLifeBenefits\\\":null,\\\"ControlNumber\\\":null,\\\"ADDType\\\":null}],\\\"eligibilityClassType\\\":\\\"Eligible Class\\\",\\\"Limitations\\\":null,\\\"PremMaxBenPrdSelectAcc\\\":null,\\\"ApplyExperience\\\":null,\\\"EmployeeEligibility\\\":null,\\\"LocationName\\\":\\\"Delaware\\\",\\\"EducatorDisabilityEliminationPeriod\\\":null,\\\"eligibilityClassSubType\\\":\\\"\\\",\\\"EligibilityWaitingPeriod\\\":{\\\"EligibilityWaitingPeriod\\\":\\\"After X Days\\\",\\\"EligibilityWaitingPeriodMonths\\\":null,\\\"EligibilityWaitingPeriodOther\\\":null,\\\"EligibilityWaitingPeriodDays\\\":30},\\\"eligibilityClassId\\\":414,\\\"PremMaxBenPrdSlctSickness\\\":null,\\\"BuyUpChocies\\\":[],\\\"SelectMaxBenPrdAcc\\\":null,\\\"DefinitionOfDisabilityConjunction\\\":null,\\\"EarningsTest\\\":[],\\\"AbilityEnhancedLangOpt\\\":null,\\\"CompositeRateInd\\\":null,\\\"eligibilityClassName\\\":\\\"Eligible Class 1\\\",\\\"EligibleEmployees\\\":null,\\\"DefinitionOfDisability\\\":null,\\\"DefinitionOfCoveredEarnings\\\":[],\\\"SurvivorBenefit\\\":[],\\\"index\\\":null,\\\"MaximumBenefitPeriod\\\":null,\\\"eligibilityClassDescription\\\":\\\"All active, Full-Time Physicians, Executives, & Directors of the Employer regularly working a minimum of 30 hours per week in the United States, who are citizens or permanent resident aliens of the United States.\\\\n\\\\n\\\",\\\"EducatorDisabilityPlanType\\\":null,\\\"SelectMaxBenPrdSelectSickness\\\":[],\\\"PremiumMaxBenPrdSelectAccident\\\":[],\\\"State\\\":null,\\\"SelectMaxBenefitPrdAccident\\\":[],\\\"PreExProvision\\\":null,\\\"MaxBenPeriodGrp\\\":[],\\\"SlctMaxBenPrdSlctSickness\\\":null}],\\\"planName\\\":\\\"BTL7567897\\\",\\\"groupSalesOffice\\\":null,\\\"commPct\\\":null,\\\"AgeReductionVolumesReduced\\\":null,\\\"planId\\\":305,\\\"contractHolder\\\":\\\"Client\\\",\\\"IncludeCommission\\\":null,\\\"situsState\\\":\\\"Delaware\\\",\\\"foreignLivesApplies\\\":null,\\\"ASOBenefitSummary\\\":null,\\\"censusFileType\\\":null,\\\"CustomerServiceSupport\\\":null,\\\"index\\\":null,\\\"fundingArrangement\\\":\\\"Fully Insured\\\",\\\"proposalExpirationDate\\\":null,\\\"rateMthglyDate\\\":1662422400000,\\\"PlanReports\\\":[],\\\"Commissions\\\":{\\\"CommissionsGradedScale\\\":null,\\\"CommissionsFlatValue\\\":null,\\\"CommissionsType\\\":null,\\\"CommissionsFlatUnit\\\":null},\\\"ForeignLives\\\":[],\\\"PerCaseCh\\\":null,\\\"BillingBranches\\\":null,\\\"VolatilityThreshold\\\":null,\\\"ComPsych\\\":[],\\\"EducatorDisabilityPlan\\\":null,\\\"status\\\":\\\"Packaged\\\",\\\"productFamily\\\":\\\"Life\\\",\\\"ADAErgo\\\":null,\\\"stateZip\\\":null,\\\"FundingDevices\\\":null,\\\"productRatingGroup\\\":null,\\\"RecordKeepingServices\\\":null,\\\"PreClassed\\\":null,\\\"TravelAssistance\\\":null,\\\"numForeignLives\\\":null,\\\"IncludeBonus\\\":null,\\\"offerType\\\":null,\\\"ASC\\\":[],\\\"preparedBy\\\":\\\"NotRated\\\",\\\"ForeignLivesApplies\\\":null,\\\"InitialRateGuaranteePeriod\\\":[],\\\"censAsOfDt\\\":null,\\\"productType\\\":\\\"Basic Term Life\\\",\\\"PlanPolicyNumber\\\":\\\"BTL7567897\\\",\\\"createDate\\\":null,\\\"planType\\\":\\\"Current\\\",\\\"EnrollmentALaCarte\\\":null,\\\"FICAMatch\\\":null,\\\"assginedCensusFileNames\\\":null,\\\"ComplexCase\\\":null,\\\"proposalSentDate\\\":null,\\\"ClaimBranches\\\":null,\\\"PerformanceGuaranteeDefinition\\\":[],\\\"censusEffectiveDate\\\":null,\\\"rateMethodologyVersion\\\":\\\"Version xxx: Initial Implementation\\\",\\\"effectiveDate\\\":null,\\\"rateGuarantee\\\":24,\\\"CovPolicyNumber\\\":{\\\"CovPolicyNumberEntry\\\":[{\\\"situsState\\\":\\\"Delaware\\\",\\\"PolicySymbol\\\":\\\"BTL\\\",\\\"PolicyNumber\\\":\\\"7567897\\\",\\\"Product\\\":\\\"Basic Term Life\\\",\\\"PolicySymbolAndNumber\\\":\\\"BTL7567897\\\"}]}}],\\\"rateMthglyDate\\\":null,\\\"mostLikelyToSell\\\":true,\\\"LTDInforce\\\":false,\\\"autoTasks\\\":null,\\\"status\\\":\\\"Draft\\\"}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#e3c58194-a4e2-4bc7-81b5-2657cfdbaa28">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="employee"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#f89f4577-9f00-4e8c-919c-86c54865daf2">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="inputJsonPayload"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

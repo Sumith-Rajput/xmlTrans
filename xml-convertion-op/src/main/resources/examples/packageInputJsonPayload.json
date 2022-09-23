@@ -1,0 +1,1550 @@
+{
+    "releasedDate": null,
+    "ProductFamily": [
+        {
+            "assignedToId": "parker",
+            "requested": true,
+            "assignedToName": "Pat Parker",
+            "type": "Life"
+        }
+    ],
+    "customerState": "Delaware",
+    "updateDate": 1662549481368,
+    "marketSize": null,
+    "properPackage": true,
+    "groupSalesOffice": null,
+    "packageType": "Standard",
+    "quoteID": null,
+    "products": [
+        "Basic Term Life"
+    ],
+    "preparedBy": null,
+    "userLevel": null,
+    "packageName": "Package 1",
+    "Rationale": null,
+    "marketSegment": null,
+    "expirationDate": null,
+    "createDate": 1662549481368,
+    "applicationVersion": null,
+    "Comment": null,
+    "packageId": 51,
+    "sandbox": false,
+    "Plan": [
+        {
+            "Zip": null,
+            "zipCode": null,
+            "EligibilityClass": [
+                {
+                    "Zip": null,
+                    "FirstDayHospitalization": null,
+                    "PremiumMaxBenPrdSelectSickness": [],
+                    "AfterBenefitsHaveBeenPayableFor": [],
+                    "PlanDesign": [
+                        {
+                            "DomesticPartnerEligible": true,
+                            "pdCode": null,
+                            "BenefitLevel": null,
+                            "planDesignName": "Plan Design 1",
+                            "DependentEligibility": [
+                                "Spouse",
+                                "Child(ren)"
+                            ],
+                            "planDesignId": 414,
+                            "pdType": "Enhanced",
+                            "Benefits": [],
+                            "pctGiVlm": null,
+                            "RateGuaranteePeriod": null,
+                            "AdditionalComments": null,
+                            "EligibilityWaitingPeriod": null,
+                            "ConversionAndPortability": {
+                                "ConversionNumberOfDaysToApply": 31,
+                                "PortabilityEligibility": "Employee",
+                                "PortabilityDurationYears": 3,
+                                "PortabilityDurationAge": null,
+                                "PortabilityDuration": "Years"
+                            },
+                            "PortPlusIncluded": null,
+                            "MultiSICCode": [],
+                            "EligibilityDefinitionPerClass": null,
+                            "ADDBenefitType": null,
+                            "ReplaceExternalCoverage": null,
+                            "WaiverOfPremium": {
+                                "WaiverOfPremiumUpToAge": 40,
+                                "ContinuationOfDisabilityStartingAge": 60,
+                                "WaiverOfPremiumDurationAge": 65,
+                                "WaiverOfPremiumWaitingPeriod": 9,
+                                "ContinuationOfDisabilityDurationMonths": 12,
+                                "ContinuationOfDisabilityDuration": "Months",
+                                "WaiverOfPremiumDuration": "To Age"
+                            },
+                            "ExtendedDeathBenefit": {
+                                "ExtendedDeathBenefitUpToAge": 60,
+                                "ExtendedDeathBenefit": true
+                            },
+                            "RateBasis": null,
+                            "BuyUpRateExp": null,
+                            "index": null,
+                            "BenefitApplies": null,
+                            "Portability": null,
+                            "Coverage": [
+                                {
+                                    "SpouseMaximumIssueAge": null,
+                                    "EmployerContributionPercentOfPremium": null,
+                                    "ParticipationInfo": [],
+                                    "IncludeTargetParticipationOnProposal": null,
+                                    "ExpectedParticipation": null,
+                                    "MatchSpouseAndEERates": null,
+                                    "EnrollmentGroup": [],
+                                    "CurrentRateSelection": null,
+                                    "ClaimAdmin": [],
+                                    "Manual": {
+                                        "OtherAdjustments": {
+                                            "ManualOtherAdjustments": 1
+                                        }
+                                    },
+                                    "CombinedCoverage": [],
+                                    "TypeCov": null,
+                                    "AdjustedBaseline": {
+                                        "RTWAutomated": [],
+                                        "SpecialRiskWar": [],
+                                        "Telephonic": [],
+                                        "CTS": {
+                                            "Comment": null,
+                                            "CTS": null,
+                                            "Rationale": null
+                                        },
+                                        "RegularAdmin": {
+                                            "Comment": null,
+                                            "RegularAdmin": null,
+                                            "Rationale": null
+                                        },
+                                        "Tax": {
+                                            "Comment": null,
+                                            "Tax": null,
+                                            "Rationale": null
+                                        },
+                                        "AdditionalAdjustments": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdj": null
+                                        },
+                                        "PEPMCommission": [],
+                                        "Union": [],
+                                        "RVAF": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "RVAF": null
+                                        },
+                                        "GradedPlan": [],
+                                        "ThirdPartyReimbursements": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "ThirdPartyReimburse": null
+                                        },
+                                        "OtherRetention": {
+                                            "Comment": null,
+                                            "OtherRetention": null,
+                                            "Rationale": null
+                                        },
+                                        "TelephonicFMLA": [],
+                                        "AdditionalAdmin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdmin": null
+                                        },
+                                        "TelephonicTollFree": [],
+                                        "ExperienceCredibility": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Cred": 0
+                                        },
+                                        "OtherAdjustmentsBlending": [],
+                                        "NoExperienceLoad": [],
+                                        "Enrollment": {
+                                            "Comment": null,
+                                            "Enroll": null,
+                                            "Rationale": null
+                                        },
+                                        "ClaimsAdmin": [],
+                                        "PerformGuar": {
+                                            "PerformGuar": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "TwentyFour7IntakeFMLA": [],
+                                        "RTWLive": [],
+                                        "SpecialRiskOther": [],
+                                        "FICAMatch": [],
+                                        "AgingTrendFactor": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AgingTrend": null
+                                        },
+                                        "PaymentFrequency": [],
+                                        "PEPMThrdPrtyChrg": [],
+                                        "AccumulatedDeficitBOP": {
+                                            "Comment": null,
+                                            "AccumBOP": null,
+                                            "Rationale": null
+                                        },
+                                        "EnrollmentCost": [],
+                                        "TwentyFour7IntakeAddOn": [],
+                                        "Conversions": {
+                                            "Comment": null,
+                                            "Conver": null,
+                                            "Rationale": null
+                                        },
+                                        "LifeRecordKeeping": {
+                                            "LifeRecordKeep": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "EnrollmentFactor": {
+                                            "Comment": null,
+                                            "EnrollmentFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "SpecialRiskAvaiation": [],
+                                        "Margin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Margin": null
+                                        }
+                                    },
+                                    "MaxBenefitAsPercentageOfEEBenefit": null,
+                                    "BasicEstimatedTobaccoUsage": null,
+                                    "RateStructureGroup": {
+                                        "SmokerStatusApplies": null,
+                                        "GenderApplies": null,
+                                        "RateFrequency": null,
+                                        "BilledRate": null,
+                                        "RateBasis": null,
+                                        "BilledVolume": null,
+                                        "VolumeUsedInRating": null,
+                                        "BilledLives": null,
+                                        "AgeBandApplies": null,
+                                        "BilledPremium": null
+                                    },
+                                    "CovTermsAtRet": null,
+                                    "OptProvisions": [],
+                                    "Child": [],
+                                    "AgeDetermination": null,
+                                    "UnitsOf": null,
+                                    "StepRated": null,
+                                    "SpouseOrChildMinimum": null,
+                                    "CoverageAmount": null,
+                                    "PortabilityOption": [],
+                                    "IncrementalRangeMinimum": null,
+                                    "EliminationPeriod": [],
+                                    "AgeReductions": {
+                                        "BenefitReductionSchedule": null,
+                                        "RoundedToIndicator": null,
+                                        "ReductionBasis": null,
+                                        "AgeReductionSchedule": null,
+                                        "ReductionRoundedToAmount": null,
+                                        "AgeReductType": null,
+                                        "CustomSchedules": null
+                                    },
+                                    "BenefitAsPercentageOfEEBenefit": null,
+                                    "BenefitReduction": null,
+                                    "Accident": [],
+                                    "Spouse": [],
+                                    "AdjustedManual": {
+                                        "Participation": [],
+                                        "EmployerFinancialHealth": [],
+                                        "ExperienceLoad": {
+                                            "Comment": null,
+                                            "ExperienceLoad": null,
+                                            "Rationale": null
+                                        },
+                                        "ThirdPartyLiabProvision": [],
+                                        "RTWIncentive": [],
+                                        "ExpectedParticipation": [],
+                                        "FortyHrWWLmtProvision": [],
+                                        "ResidualBenefitProvision": [],
+                                        "DisabledNoListLoad": {
+                                            "Comment": null,
+                                            "DisabledNoListLoad": null,
+                                            "Rationale": null
+                                        },
+                                        "ContributoryPlanFactor": [],
+                                        "EmployerWorkEnvironment": [],
+                                        "TargetPlanDesign": [],
+                                        "RateGuaranteeAdj": [],
+                                        "OtherOffsets": [],
+                                        "WaiverSICFactor": {
+                                            "WaiverSICFactor": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "CaseSizeFactor": [],
+                                        "BuyUpLoad": [],
+                                        "RateGuaranteeLoad": [],
+                                        "DefinitionOfDisability": [],
+                                        "SurvivorBenefit": [],
+                                        "ReplacementRatio": [],
+                                        "PreExBenefit": [],
+                                        "FICAMatch": [],
+                                        "IndustryFactor": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "IndustryFactor": null
+                                        },
+                                        "WaitingPeriodAdjFactor": [],
+                                        "PrexistingCondExclusionProvision": [],
+                                        "OtherAdjustments": {
+                                            "OtherAdjustments": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "TrueUpFactor": [],
+                                        "DisProvLoad": {
+                                            "Comment": null,
+                                            "DisProvLoad": null,
+                                            "Rationale": null
+                                        },
+                                        "AggregateOccupationAdj": [],
+                                        "ManualRateIntelligence": [],
+                                        "ReturnToWorkCulture": [],
+                                        "ClaimPaymentFrequency": [],
+                                        "BenefitMaximum": [],
+                                        "AreaFactor": {
+                                            "Comment": null,
+                                            "AreaFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "EffectiveDateAdjustment": {
+                                            "Comment": null,
+                                            "EffectiveDateAdjustment": null,
+                                            "Rationale": null
+                                        },
+                                        "Waiver": [],
+                                        "CABFactor": {
+                                            "Comment": null,
+                                            "CABFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "WaiverDefDis": [],
+                                        "SalaryAdjustmentFactor": {
+                                            "Comment": null,
+                                            "SalaryAdjustmentFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "MaternityBenefit": [],
+                                        "STDIntegration": [],
+                                        "IndustryOutlook": []
+                                    },
+                                    "PEPMLives": null,
+                                    "Margin": [],
+                                    "SpouseOrChildPercentOfEmployeeAmount": null,
+                                    "Sickness": [],
+                                    "TotalMaxiumumBenefitMultiplier": null,
+                                    "SpouseOrChildMaximum": null,
+                                    "DomesticPartners": null,
+                                    "DisabilityProvision": [],
+                                    "ADDScheduleOfBenefits": [],
+                                    "ExpReqButUnavail": null,
+                                    "Demographics": {
+                                        "CalculationPurpose": "Calculation Purpose "
+                                    },
+                                    "Pricing": [],
+                                    "EEContributions": null,
+                                    "ParticipationPCT": null,
+                                    "IncrementalRangeMaximum": null,
+                                    "AcceleratedDeathBenefit": [],
+                                    "RateType": null,
+                                    "SpouseRatingType": null,
+                                    "WaiveSpouseMaximumIssueAge": null,
+                                    "EmployerContributionMonthlyPremium": null,
+                                    "AdjustmentTarget": {
+                                        "RTWAutomated": [],
+                                        "SpecialRiskWar": [],
+                                        "Telephonic": [],
+                                        "CTS": {
+                                            "Comment": null,
+                                            "CTS": null,
+                                            "Rationale": null
+                                        },
+                                        "RegularAdmin": {
+                                            "Comment": null,
+                                            "RegularAdmin": null,
+                                            "Rationale": null
+                                        },
+                                        "AdditionalAdjustments": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdj": null
+                                        },
+                                        "Union": [],
+                                        "RVAF": [],
+                                        "GradedPlan": [],
+                                        "BUC": [],
+                                        "OtherRetention": {
+                                            "Comment": null,
+                                            "OtherRetention": null,
+                                            "Rationale": null
+                                        },
+                                        "TelephonicFMLA": [],
+                                        "AdditionalAdmin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdmin": null
+                                        },
+                                        "TelephonicTollFree": [],
+                                        "ExperienceCredibility": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Cred": 0
+                                        },
+                                        "OtherAdjustmentsBlending": [],
+                                        "NoExperienceLoad": [],
+                                        "ManualClaimRate": [],
+                                        "Profit": [],
+                                        "TargetLossRatio": [],
+                                        "ClaimsAdmin": [],
+                                        "ProposedBUC": [],
+                                        "PerformGuar": {
+                                            "PerformGuar": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "PMAdj": [],
+                                        "CashFlow": [],
+                                        "TwentyFour7IntakeFMLA": [],
+                                        "RateGuaranteeLoad": [],
+                                        "RTWLive": [],
+                                        "SpecialRiskOther": [],
+                                        "FICAMatch": [],
+                                        "AgingTrendFactor": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AgingTrend": null
+                                        },
+                                        "PaymentFrequency": [],
+                                        "Portability": {
+                                            "Comment": null,
+                                            "Portability": null,
+                                            "Rationale": null
+                                        },
+                                        "AccumulatedDeficitBOP": [],
+                                        "EnrollmentCost": [],
+                                        "TrueUpFactor": [],
+                                        "TwentyFour7IntakeAddOn": [],
+                                        "MortalityImprovement": {
+                                            "Comment": null,
+                                            "MorImprove": null,
+                                            "Rationale": null
+                                        },
+                                        "Taxes": [],
+                                        "Conversions": {
+                                            "Comment": null,
+                                            "Conver": null,
+                                            "Rationale": null
+                                        },
+                                        "InterestAdj": [],
+                                        "PremiumDelay": [],
+                                        "EnrollmentFactor": {
+                                            "Comment": null,
+                                            "EnrollmentFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "SpecialRiskAvaiation": [],
+                                        "Margin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Margin": null
+                                        },
+                                        "IndustryOutlook": []
+                                    },
+                                    "SameDiagnosisWaitingPeriod": null,
+                                    "FamilySchedule": [],
+                                    "ADDRider": [],
+                                    "ChildRatingType": null,
+                                    "SpouseEligibleWoutEEEnrollment": null,
+                                    "BenefitType": {
+                                        "UnitsIncrease": null,
+                                        "SalaryMultiple9": null,
+                                        "SalaryMultiple8": null,
+                                        "SalaryMultiple7": null,
+                                        "SalaryMultiple6": null,
+                                        "SalaryMultiple5": null,
+                                        "SalaryMultiple4": null,
+                                        "SalaryMultiple3": null,
+                                        "SalaryMultiple2": null,
+                                        "SalaryMultiple1": null,
+                                        "VoluntaryMaximumCombinedWithBasicMaximum": null,
+                                        "FlatBenAmt": 70,
+                                        "EarningsType": null,
+                                        "BenefitMaximumPct": null,
+                                        "FlatBenefitAmount9": null,
+                                        "FlatBenefitAmount8": null,
+                                        "LifeCoverageEndsAtAge": null,
+                                        "GuaranteedIssueTimesSalary": null,
+                                        "FlatBenefitAmount7": null,
+                                        "FlatBenefitAmount6": null,
+                                        "CombinedMaximumFlat": null,
+                                        "VoluntaryGICombinedWithBasicGI": null,
+                                        "FlatBenefitAmount10": null,
+                                        "PercentOfBenefit": null,
+                                        "RoundingRuleAppliesTo": null,
+                                        "FullTimeStudents": 3,
+                                        "BirthTo14DaysOld": null,
+                                        "UnitsOf": null,
+                                        "PercentageBasis": null,
+                                        "RoundingRule": null,
+                                        "BenefitLevelIncrease": null,
+                                        "FlatBenefitAmount1": null,
+                                        "SalaryMultiple10": null,
+                                        "CombinedTimesSalary": null,
+                                        "FlatBenefitAmount5": null,
+                                        "FlatBenefitAmount4": null,
+                                        "Units": null,
+                                        "FlatBenefitAmount3": null,
+                                        "FlatBenefitAmount2": null,
+                                        "BenefitMinimum": null,
+                                        "BenefitType": "Flat",
+                                        "TypeOfAnnualEnrollmentIncrease": null,
+                                        "NonFullTimeStudents": null,
+                                        "GuaranteedIssueAmount": null,
+                                        "BenefitMaximum": null,
+                                        "Days14To6MonthsOld": null,
+                                        "RoundingAmount": null
+                                    },
+                                    "TobaccoStatus": null,
+                                    "SpouseBenefitAsPercentageOfEEBenefit": null,
+                                    "CompsychException": null,
+                                    "RatingBasis": null,
+                                    "EnhancedOptions": [],
+                                    "DependentChildEligibleWOutEEEnrollment": null,
+                                    "Increments": null,
+                                    "ChildMaximumIssueAge": null,
+                                    "InitialMinimumParticipation": null,
+                                    "PlanSchedule": [],
+                                    "SpouseOrChildSingleFlatAmount": null
+                                },
+                                {
+                                    "SpouseMaximumIssueAge": null,
+                                    "EmployerContributionPercentOfPremium": null,
+                                    "ParticipationInfo": [],
+                                    "IncludeTargetParticipationOnProposal": null,
+                                    "ExpectedParticipation": null,
+                                    "MatchSpouseAndEERates": null,
+                                    "EnrollmentGroup": [],
+                                    "CurrentRateSelection": "Census Rate",
+                                    "ClaimAdmin": [],
+                                    "Manual": {
+                                        "OtherAdjustments": {
+                                            "ManualOtherAdjustments": 1
+                                        }
+                                    },
+                                    "CombinedCoverage": [],
+                                    "TypeCov": null,
+                                    "AdjustedBaseline": {
+                                        "RTWAutomated": [],
+                                        "SpecialRiskWar": [],
+                                        "Telephonic": [],
+                                        "CTS": {
+                                            "Comment": null,
+                                            "CTS": null,
+                                            "Rationale": null
+                                        },
+                                        "RegularAdmin": {
+                                            "Comment": null,
+                                            "RegularAdmin": null,
+                                            "Rationale": null
+                                        },
+                                        "Tax": {
+                                            "Comment": null,
+                                            "Tax": null,
+                                            "Rationale": null
+                                        },
+                                        "AdditionalAdjustments": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdj": null
+                                        },
+                                        "PEPMCommission": [],
+                                        "Union": [],
+                                        "RVAF": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "RVAF": null
+                                        },
+                                        "GradedPlan": [],
+                                        "ThirdPartyReimbursements": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "ThirdPartyReimburse": null
+                                        },
+                                        "OtherRetention": {
+                                            "Comment": null,
+                                            "OtherRetention": null,
+                                            "Rationale": null
+                                        },
+                                        "TelephonicFMLA": [],
+                                        "AdditionalAdmin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdmin": null
+                                        },
+                                        "TelephonicTollFree": [],
+                                        "ExperienceCredibility": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Cred": 0
+                                        },
+                                        "OtherAdjustmentsBlending": [],
+                                        "NoExperienceLoad": [],
+                                        "Enrollment": {
+                                            "Comment": null,
+                                            "Enroll": null,
+                                            "Rationale": null
+                                        },
+                                        "ClaimsAdmin": [],
+                                        "PerformGuar": {
+                                            "PerformGuar": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "TwentyFour7IntakeFMLA": [],
+                                        "RTWLive": [],
+                                        "SpecialRiskOther": [],
+                                        "FICAMatch": [],
+                                        "AgingTrendFactor": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AgingTrend": null
+                                        },
+                                        "PaymentFrequency": [],
+                                        "PEPMThrdPrtyChrg": [],
+                                        "AccumulatedDeficitBOP": {
+                                            "Comment": null,
+                                            "AccumBOP": null,
+                                            "Rationale": null
+                                        },
+                                        "EnrollmentCost": [],
+                                        "TwentyFour7IntakeAddOn": [],
+                                        "Conversions": {
+                                            "Comment": null,
+                                            "Conver": null,
+                                            "Rationale": null
+                                        },
+                                        "LifeRecordKeeping": {
+                                            "LifeRecordKeep": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "EnrollmentFactor": [],
+                                        "SpecialRiskAvaiation": [],
+                                        "Margin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Margin": null
+                                        }
+                                    },
+                                    "MaxBenefitAsPercentageOfEEBenefit": null,
+                                    "BasicEstimatedTobaccoUsage": null,
+                                    "RateStructureGroup": {
+                                        "SmokerStatusApplies": null,
+                                        "GenderApplies": null,
+                                        "RateFrequency": null,
+                                        "BilledRate": null,
+                                        "RateBasis": null,
+                                        "BilledVolume": null,
+                                        "VolumeUsedInRating": null,
+                                        "BilledLives": null,
+                                        "AgeBandApplies": null,
+                                        "BilledPremium": null
+                                    },
+                                    "CovTermsAtRet": null,
+                                    "OptProvisions": [],
+                                    "Child": [],
+                                    "AgeDetermination": null,
+                                    "UnitsOf": null,
+                                    "StepRated": null,
+                                    "SpouseOrChildMinimum": null,
+                                    "CoverageAmount": null,
+                                    "PortabilityOption": [],
+                                    "IncrementalRangeMinimum": null,
+                                    "EliminationPeriod": [],
+                                    "AgeReductions": {
+                                        "BenefitReductionSchedule": null,
+                                        "RoundedToIndicator": null,
+                                        "ReductionBasis": null,
+                                        "AgeReductionSchedule": null,
+                                        "ReductionRoundedToAmount": null,
+                                        "AgeReductType": null,
+                                        "CustomSchedules": null
+                                    },
+                                    "BenefitAsPercentageOfEEBenefit": null,
+                                    "BenefitReduction": null,
+                                    "Accident": [],
+                                    "Spouse": [],
+                                    "AdjustedManual": {
+                                        "Participation": [],
+                                        "EmployerFinancialHealth": [],
+                                        "ExperienceLoad": {
+                                            "Comment": null,
+                                            "ExperienceLoad": null,
+                                            "Rationale": null
+                                        },
+                                        "ThirdPartyLiabProvision": [],
+                                        "RTWIncentive": [],
+                                        "ExpectedParticipation": [],
+                                        "FortyHrWWLmtProvision": [],
+                                        "ResidualBenefitProvision": [],
+                                        "DisabledNoListLoad": {
+                                            "Comment": null,
+                                            "DisabledNoListLoad": null,
+                                            "Rationale": null
+                                        },
+                                        "ContributoryPlanFactor": [],
+                                        "EmployerWorkEnvironment": [],
+                                        "TargetPlanDesign": [],
+                                        "RateGuaranteeAdj": [],
+                                        "OtherOffsets": [],
+                                        "WaiverSICFactor": {
+                                            "WaiverSICFactor": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "CaseSizeFactor": [],
+                                        "BuyUpLoad": [],
+                                        "RateGuaranteeLoad": [],
+                                        "DefinitionOfDisability": [],
+                                        "SurvivorBenefit": [],
+                                        "ReplacementRatio": [],
+                                        "PreExBenefit": [],
+                                        "FICAMatch": [],
+                                        "IndustryFactor": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "IndustryFactor": null
+                                        },
+                                        "WaitingPeriodAdjFactor": [],
+                                        "PrexistingCondExclusionProvision": [],
+                                        "OtherAdjustments": {
+                                            "OtherAdjustments": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "TrueUpFactor": [],
+                                        "DisProvLoad": {
+                                            "Comment": null,
+                                            "DisProvLoad": null,
+                                            "Rationale": null
+                                        },
+                                        "AggregateOccupationAdj": [],
+                                        "ManualRateIntelligence": [],
+                                        "ReturnToWorkCulture": [],
+                                        "ClaimPaymentFrequency": [],
+                                        "BenefitMaximum": [],
+                                        "AreaFactor": {
+                                            "Comment": null,
+                                            "AreaFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "EffectiveDateAdjustment": {
+                                            "Comment": null,
+                                            "EffectiveDateAdjustment": null,
+                                            "Rationale": null
+                                        },
+                                        "Waiver": [],
+                                        "CABFactor": {
+                                            "Comment": null,
+                                            "CABFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "WaiverDefDis": [],
+                                        "SalaryAdjustmentFactor": {
+                                            "Comment": null,
+                                            "SalaryAdjustmentFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "MaternityBenefit": [],
+                                        "STDIntegration": [],
+                                        "IndustryOutlook": []
+                                    },
+                                    "PEPMLives": null,
+                                    "Margin": [],
+                                    "SpouseOrChildPercentOfEmployeeAmount": null,
+                                    "Sickness": [],
+                                    "TotalMaxiumumBenefitMultiplier": null,
+                                    "SpouseOrChildMaximum": null,
+                                    "DomesticPartners": null,
+                                    "DisabilityProvision": [],
+                                    "ADDScheduleOfBenefits": [],
+                                    "ExpReqButUnavail": null,
+                                    "Demographics": {
+                                        "CalculationPurpose": "Calculation Purpose "
+                                    },
+                                    "Pricing": [],
+                                    "EEContributions": null,
+                                    "ParticipationPCT": null,
+                                    "IncrementalRangeMaximum": null,
+                                    "AcceleratedDeathBenefit": {
+                                        "SpouseAcceleratedDeathBenefit": null,
+                                        "AcceleratedLifeOption": null,
+                                        "AcceleratedLifeLimitPercent": null,
+                                        "BenefitMaximum": null,
+                                        "UpToPctSgn": null,
+                                        "AcceleratedLifeMonths": null,
+                                        "AcceleratedLifeMaxAmount": null,
+                                        "FlatDlrSignAmount": 80,
+                                        "ChildAcceleratedDeathBenefit": null,
+                                        "AcceleratedDeathBenefit": "Terminal Illness Flat $",
+                                        "AcceleratedLifeMinAmount": null,
+                                        "AcceleratedContinuousConfinement": null
+                                    },
+                                    "RateType": null,
+                                    "SpouseRatingType": null,
+                                    "WaiveSpouseMaximumIssueAge": null,
+                                    "EmployerContributionMonthlyPremium": null,
+                                    "AdjustmentTarget": {
+                                        "RTWAutomated": [],
+                                        "SpecialRiskWar": [],
+                                        "Telephonic": [],
+                                        "CTS": {
+                                            "Comment": null,
+                                            "CTS": null,
+                                            "Rationale": null
+                                        },
+                                        "RegularAdmin": {
+                                            "Comment": null,
+                                            "RegularAdmin": null,
+                                            "Rationale": null
+                                        },
+                                        "AdditionalAdjustments": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdj": null
+                                        },
+                                        "Union": [],
+                                        "RVAF": [],
+                                        "GradedPlan": [],
+                                        "BUC": [],
+                                        "OtherRetention": {
+                                            "Comment": null,
+                                            "OtherRetention": null,
+                                            "Rationale": null
+                                        },
+                                        "TelephonicFMLA": [],
+                                        "AdditionalAdmin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdmin": null
+                                        },
+                                        "TelephonicTollFree": [],
+                                        "ExperienceCredibility": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Cred": 0
+                                        },
+                                        "OtherAdjustmentsBlending": [],
+                                        "NoExperienceLoad": [],
+                                        "ManualClaimRate": [],
+                                        "Profit": [],
+                                        "TargetLossRatio": [],
+                                        "ClaimsAdmin": [],
+                                        "ProposedBUC": [],
+                                        "PerformGuar": {
+                                            "PerformGuar": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "PMAdj": [],
+                                        "CashFlow": [],
+                                        "TwentyFour7IntakeFMLA": [],
+                                        "RateGuaranteeLoad": [],
+                                        "RTWLive": [],
+                                        "SpecialRiskOther": [],
+                                        "FICAMatch": [],
+                                        "AgingTrendFactor": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AgingTrend": null
+                                        },
+                                        "PaymentFrequency": [],
+                                        "Portability": {
+                                            "Comment": null,
+                                            "Portability": null,
+                                            "Rationale": null
+                                        },
+                                        "AccumulatedDeficitBOP": [],
+                                        "EnrollmentCost": [],
+                                        "TrueUpFactor": [],
+                                        "TwentyFour7IntakeAddOn": [],
+                                        "MortalityImprovement": {
+                                            "Comment": null,
+                                            "MorImprove": null,
+                                            "Rationale": null
+                                        },
+                                        "Taxes": [],
+                                        "Conversions": {
+                                            "Comment": null,
+                                            "Conver": null,
+                                            "Rationale": null
+                                        },
+                                        "InterestAdj": [],
+                                        "PremiumDelay": [],
+                                        "EnrollmentFactor": {
+                                            "Comment": null,
+                                            "EnrollmentFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "SpecialRiskAvaiation": [],
+                                        "Margin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Margin": null
+                                        },
+                                        "IndustryOutlook": []
+                                    },
+                                    "SameDiagnosisWaitingPeriod": null,
+                                    "FamilySchedule": [],
+                                    "ADDRider": [],
+                                    "ChildRatingType": null,
+                                    "SpouseEligibleWoutEEEnrollment": null,
+                                    "BenefitType": {
+                                        "UnitsIncrease": null,
+                                        "SalaryMultiple9": null,
+                                        "SalaryMultiple8": null,
+                                        "SalaryMultiple7": null,
+                                        "SalaryMultiple6": null,
+                                        "SalaryMultiple5": null,
+                                        "SalaryMultiple4": null,
+                                        "SalaryMultiple3": null,
+                                        "SalaryMultiple2": null,
+                                        "SalaryMultiple1": null,
+                                        "VoluntaryMaximumCombinedWithBasicMaximum": null,
+                                        "FlatBenAmt": 70,
+                                        "EarningsType": null,
+                                        "BenefitMaximumPct": null,
+                                        "FlatBenefitAmount9": null,
+                                        "FlatBenefitAmount8": null,
+                                        "LifeCoverageEndsAtAge": null,
+                                        "GuaranteedIssueTimesSalary": 3,
+                                        "FlatBenefitAmount7": null,
+                                        "FlatBenefitAmount6": null,
+                                        "CombinedMaximumFlat": 50,
+                                        "VoluntaryGICombinedWithBasicGI": null,
+                                        "FlatBenefitAmount10": null,
+                                        "PercentOfBenefit": null,
+                                        "RoundingRuleAppliesTo": null,
+                                        "FullTimeStudents": null,
+                                        "BirthTo14DaysOld": null,
+                                        "UnitsOf": null,
+                                        "PercentageBasis": null,
+                                        "RoundingRule": null,
+                                        "BenefitLevelIncrease": null,
+                                        "FlatBenefitAmount1": null,
+                                        "SalaryMultiple10": null,
+                                        "CombinedTimesSalary": 10,
+                                        "FlatBenefitAmount5": null,
+                                        "FlatBenefitAmount4": null,
+                                        "Units": null,
+                                        "FlatBenefitAmount3": null,
+                                        "FlatBenefitAmount2": null,
+                                        "BenefitMinimum": null,
+                                        "BenefitType": "Flat",
+                                        "TypeOfAnnualEnrollmentIncrease": null,
+                                        "NonFullTimeStudents": null,
+                                        "GuaranteedIssueAmount": 60,
+                                        "BenefitMaximum": null,
+                                        "Days14To6MonthsOld": null,
+                                        "RoundingAmount": null
+                                    },
+                                    "TobaccoStatus": null,
+                                    "SpouseBenefitAsPercentageOfEEBenefit": null,
+                                    "CompsychException": null,
+                                    "RatingBasis": null,
+                                    "EnhancedOptions": [],
+                                    "DependentChildEligibleWOutEEEnrollment": null,
+                                    "Increments": null,
+                                    "ChildMaximumIssueAge": null,
+                                    "InitialMinimumParticipation": null,
+                                    "PlanSchedule": [],
+                                    "SpouseOrChildSingleFlatAmount": null
+                                },
+                                {
+                                    "SpouseMaximumIssueAge": null,
+                                    "EmployerContributionPercentOfPremium": null,
+                                    "ParticipationInfo": [],
+                                    "IncludeTargetParticipationOnProposal": null,
+                                    "ExpectedParticipation": null,
+                                    "MatchSpouseAndEERates": null,
+                                    "EnrollmentGroup": [],
+                                    "CurrentRateSelection": null,
+                                    "ClaimAdmin": [],
+                                    "Manual": {
+                                        "OtherAdjustments": {
+                                            "ManualOtherAdjustments": 1
+                                        }
+                                    },
+                                    "CombinedCoverage": [],
+                                    "TypeCov": null,
+                                    "AdjustedBaseline": {
+                                        "RTWAutomated": [],
+                                        "SpecialRiskWar": [],
+                                        "Telephonic": [],
+                                        "CTS": {
+                                            "Comment": null,
+                                            "CTS": null,
+                                            "Rationale": null
+                                        },
+                                        "RegularAdmin": {
+                                            "Comment": null,
+                                            "RegularAdmin": null,
+                                            "Rationale": null
+                                        },
+                                        "Tax": {
+                                            "Comment": null,
+                                            "Tax": null,
+                                            "Rationale": null
+                                        },
+                                        "AdditionalAdjustments": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdj": null
+                                        },
+                                        "PEPMCommission": [],
+                                        "Union": [],
+                                        "RVAF": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "RVAF": null
+                                        },
+                                        "GradedPlan": [],
+                                        "ThirdPartyReimbursements": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "ThirdPartyReimburse": null
+                                        },
+                                        "OtherRetention": {
+                                            "Comment": null,
+                                            "OtherRetention": null,
+                                            "Rationale": null
+                                        },
+                                        "TelephonicFMLA": [],
+                                        "AdditionalAdmin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdmin": null
+                                        },
+                                        "TelephonicTollFree": [],
+                                        "ExperienceCredibility": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Cred": 0
+                                        },
+                                        "OtherAdjustmentsBlending": [],
+                                        "NoExperienceLoad": [],
+                                        "Enrollment": {
+                                            "Comment": null,
+                                            "Enroll": null,
+                                            "Rationale": null
+                                        },
+                                        "ClaimsAdmin": [],
+                                        "PerformGuar": {
+                                            "PerformGuar": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "TwentyFour7IntakeFMLA": [],
+                                        "RTWLive": [],
+                                        "SpecialRiskOther": [],
+                                        "FICAMatch": [],
+                                        "AgingTrendFactor": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AgingTrend": null
+                                        },
+                                        "PaymentFrequency": [],
+                                        "PEPMThrdPrtyChrg": [],
+                                        "AccumulatedDeficitBOP": {
+                                            "Comment": null,
+                                            "AccumBOP": null,
+                                            "Rationale": null
+                                        },
+                                        "EnrollmentCost": [],
+                                        "TwentyFour7IntakeAddOn": [],
+                                        "Conversions": {
+                                            "Comment": null,
+                                            "Conver": null,
+                                            "Rationale": null
+                                        },
+                                        "LifeRecordKeeping": {
+                                            "LifeRecordKeep": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "EnrollmentFactor": {
+                                            "Comment": null,
+                                            "EnrollmentFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "SpecialRiskAvaiation": [],
+                                        "Margin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Margin": null
+                                        }
+                                    },
+                                    "MaxBenefitAsPercentageOfEEBenefit": null,
+                                    "BasicEstimatedTobaccoUsage": null,
+                                    "RateStructureGroup": {
+                                        "SmokerStatusApplies": null,
+                                        "GenderApplies": null,
+                                        "RateFrequency": null,
+                                        "BilledRate": null,
+                                        "RateBasis": null,
+                                        "BilledVolume": null,
+                                        "VolumeUsedInRating": null,
+                                        "BilledLives": null,
+                                        "AgeBandApplies": null,
+                                        "BilledPremium": null
+                                    },
+                                    "CovTermsAtRet": null,
+                                    "OptProvisions": [],
+                                    "Child": [],
+                                    "AgeDetermination": null,
+                                    "UnitsOf": null,
+                                    "StepRated": null,
+                                    "SpouseOrChildMinimum": null,
+                                    "CoverageAmount": null,
+                                    "PortabilityOption": [],
+                                    "IncrementalRangeMinimum": null,
+                                    "EliminationPeriod": [],
+                                    "AgeReductions": {
+                                        "BenefitReductionSchedule": null,
+                                        "RoundedToIndicator": null,
+                                        "ReductionBasis": null,
+                                        "AgeReductionSchedule": null,
+                                        "ReductionRoundedToAmount": null,
+                                        "AgeReductType": null,
+                                        "CustomSchedules": null
+                                    },
+                                    "BenefitAsPercentageOfEEBenefit": null,
+                                    "BenefitReduction": null,
+                                    "Accident": [],
+                                    "Spouse": [],
+                                    "AdjustedManual": {
+                                        "Participation": [],
+                                        "EmployerFinancialHealth": [],
+                                        "ExperienceLoad": {
+                                            "Comment": null,
+                                            "ExperienceLoad": null,
+                                            "Rationale": null
+                                        },
+                                        "ThirdPartyLiabProvision": [],
+                                        "RTWIncentive": [],
+                                        "ExpectedParticipation": [],
+                                        "FortyHrWWLmtProvision": [],
+                                        "ResidualBenefitProvision": [],
+                                        "DisabledNoListLoad": {
+                                            "Comment": null,
+                                            "DisabledNoListLoad": null,
+                                            "Rationale": null
+                                        },
+                                        "ContributoryPlanFactor": [],
+                                        "EmployerWorkEnvironment": [],
+                                        "TargetPlanDesign": [],
+                                        "RateGuaranteeAdj": [],
+                                        "OtherOffsets": [],
+                                        "WaiverSICFactor": {
+                                            "WaiverSICFactor": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "CaseSizeFactor": [],
+                                        "BuyUpLoad": [],
+                                        "RateGuaranteeLoad": [],
+                                        "DefinitionOfDisability": [],
+                                        "SurvivorBenefit": [],
+                                        "ReplacementRatio": [],
+                                        "PreExBenefit": [],
+                                        "FICAMatch": [],
+                                        "IndustryFactor": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "IndustryFactor": null
+                                        },
+                                        "WaitingPeriodAdjFactor": [],
+                                        "PrexistingCondExclusionProvision": [],
+                                        "OtherAdjustments": {
+                                            "OtherAdjustments": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "TrueUpFactor": [],
+                                        "DisProvLoad": {
+                                            "Comment": null,
+                                            "DisProvLoad": null,
+                                            "Rationale": null
+                                        },
+                                        "AggregateOccupationAdj": [],
+                                        "ManualRateIntelligence": [],
+                                        "ReturnToWorkCulture": [],
+                                        "ClaimPaymentFrequency": [],
+                                        "BenefitMaximum": [],
+                                        "AreaFactor": {
+                                            "Comment": null,
+                                            "AreaFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "EffectiveDateAdjustment": {
+                                            "Comment": null,
+                                            "EffectiveDateAdjustment": null,
+                                            "Rationale": null
+                                        },
+                                        "Waiver": [],
+                                        "CABFactor": {
+                                            "Comment": null,
+                                            "CABFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "WaiverDefDis": [],
+                                        "SalaryAdjustmentFactor": {
+                                            "Comment": null,
+                                            "SalaryAdjustmentFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "MaternityBenefit": [],
+                                        "STDIntegration": [],
+                                        "IndustryOutlook": []
+                                    },
+                                    "PEPMLives": null,
+                                    "Margin": [],
+                                    "SpouseOrChildPercentOfEmployeeAmount": null,
+                                    "Sickness": [],
+                                    "TotalMaxiumumBenefitMultiplier": null,
+                                    "SpouseOrChildMaximum": null,
+                                    "DomesticPartners": null,
+                                    "DisabilityProvision": [],
+                                    "ADDScheduleOfBenefits": [],
+                                    "ExpReqButUnavail": null,
+                                    "Demographics": {
+                                        "CalculationPurpose": "Calculation Purpose "
+                                    },
+                                    "Pricing": [],
+                                    "EEContributions": null,
+                                    "ParticipationPCT": null,
+                                    "IncrementalRangeMaximum": null,
+                                    "AcceleratedDeathBenefit": {
+                                        "SpouseAcceleratedDeathBenefit": null,
+                                        "AcceleratedLifeOption": null,
+                                        "AcceleratedLifeLimitPercent": null,
+                                        "BenefitMaximum": null,
+                                        "UpToPctSgn": null,
+                                        "AcceleratedLifeMonths": null,
+                                        "AcceleratedLifeMaxAmount": null,
+                                        "FlatDlrSignAmount": 80,
+                                        "ChildAcceleratedDeathBenefit": null,
+                                        "AcceleratedDeathBenefit": "Terminal Illness Flat $",
+                                        "AcceleratedLifeMinAmount": null,
+                                        "AcceleratedContinuousConfinement": null
+                                    },
+                                    "RateType": null,
+                                    "SpouseRatingType": null,
+                                    "WaiveSpouseMaximumIssueAge": null,
+                                    "EmployerContributionMonthlyPremium": null,
+                                    "AdjustmentTarget": {
+                                        "RTWAutomated": [],
+                                        "SpecialRiskWar": [],
+                                        "Telephonic": [],
+                                        "CTS": {
+                                            "Comment": null,
+                                            "CTS": null,
+                                            "Rationale": null
+                                        },
+                                        "RegularAdmin": {
+                                            "Comment": null,
+                                            "RegularAdmin": null,
+                                            "Rationale": null
+                                        },
+                                        "AdditionalAdjustments": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdj": null
+                                        },
+                                        "Union": [],
+                                        "RVAF": [],
+                                        "GradedPlan": [],
+                                        "BUC": [],
+                                        "OtherRetention": {
+                                            "Comment": null,
+                                            "OtherRetention": null,
+                                            "Rationale": null
+                                        },
+                                        "TelephonicFMLA": [],
+                                        "AdditionalAdmin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AddAdmin": null
+                                        },
+                                        "TelephonicTollFree": [],
+                                        "ExperienceCredibility": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Cred": 0
+                                        },
+                                        "OtherAdjustmentsBlending": [],
+                                        "NoExperienceLoad": [],
+                                        "ManualClaimRate": [],
+                                        "Profit": [],
+                                        "TargetLossRatio": [],
+                                        "ClaimsAdmin": [],
+                                        "ProposedBUC": [],
+                                        "PerformGuar": {
+                                            "PerformGuar": null,
+                                            "Comment": null,
+                                            "Rationale": null
+                                        },
+                                        "PMAdj": [],
+                                        "CashFlow": [],
+                                        "TwentyFour7IntakeFMLA": [],
+                                        "RateGuaranteeLoad": [],
+                                        "RTWLive": [],
+                                        "SpecialRiskOther": [],
+                                        "FICAMatch": [],
+                                        "AgingTrendFactor": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "AgingTrend": null
+                                        },
+                                        "PaymentFrequency": [],
+                                        "Portability": {
+                                            "Comment": null,
+                                            "Portability": null,
+                                            "Rationale": null
+                                        },
+                                        "AccumulatedDeficitBOP": [],
+                                        "EnrollmentCost": [],
+                                        "TrueUpFactor": [],
+                                        "TwentyFour7IntakeAddOn": [],
+                                        "MortalityImprovement": {
+                                            "Comment": null,
+                                            "MorImprove": null,
+                                            "Rationale": null
+                                        },
+                                        "Taxes": [],
+                                        "Conversions": {
+                                            "Comment": null,
+                                            "Conver": null,
+                                            "Rationale": null
+                                        },
+                                        "InterestAdj": [],
+                                        "PremiumDelay": [],
+                                        "EnrollmentFactor": {
+                                            "Comment": null,
+                                            "EnrollmentFactor": null,
+                                            "Rationale": null
+                                        },
+                                        "SpecialRiskAvaiation": [],
+                                        "Margin": {
+                                            "Comment": null,
+                                            "Rationale": null,
+                                            "Margin": null
+                                        },
+                                        "IndustryOutlook": []
+                                    },
+                                    "SameDiagnosisWaitingPeriod": null,
+                                    "FamilySchedule": [],
+                                    "ADDRider": [],
+                                    "ChildRatingType": null,
+                                    "SpouseEligibleWoutEEEnrollment": null,
+                                    "BenefitType": {
+                                        "UnitsIncrease": null,
+                                        "SalaryMultiple9": null,
+                                        "SalaryMultiple8": null,
+                                        "SalaryMultiple7": null,
+                                        "SalaryMultiple6": null,
+                                        "SalaryMultiple5": null,
+                                        "SalaryMultiple4": null,
+                                        "SalaryMultiple3": null,
+                                        "SalaryMultiple2": null,
+                                        "SalaryMultiple1": null,
+                                        "VoluntaryMaximumCombinedWithBasicMaximum": null,
+                                        "FlatBenAmt": 70,
+                                        "EarningsType": null,
+                                        "BenefitMaximumPct": null,
+                                        "FlatBenefitAmount9": null,
+                                        "FlatBenefitAmount8": null,
+                                        "LifeCoverageEndsAtAge": 70,
+                                        "GuaranteedIssueTimesSalary": null,
+                                        "FlatBenefitAmount7": null,
+                                        "FlatBenefitAmount6": null,
+                                        "CombinedMaximumFlat": null,
+                                        "VoluntaryGICombinedWithBasicGI": null,
+                                        "FlatBenefitAmount10": null,
+                                        "PercentOfBenefit": null,
+                                        "RoundingRuleAppliesTo": null,
+                                        "FullTimeStudents": null,
+                                        "BirthTo14DaysOld": null,
+                                        "UnitsOf": null,
+                                        "PercentageBasis": null,
+                                        "RoundingRule": null,
+                                        "BenefitLevelIncrease": null,
+                                        "FlatBenefitAmount1": null,
+                                        "SalaryMultiple10": null,
+                                        "CombinedTimesSalary": null,
+                                        "FlatBenefitAmount5": null,
+                                        "FlatBenefitAmount4": null,
+                                        "Units": null,
+                                        "FlatBenefitAmount3": null,
+                                        "FlatBenefitAmount2": null,
+                                        "BenefitMinimum": null,
+                                        "BenefitType": "Flat",
+                                        "TypeOfAnnualEnrollmentIncrease": null,
+                                        "NonFullTimeStudents": null,
+                                        "GuaranteedIssueAmount": 30,
+                                        "BenefitMaximum": null,
+                                        "Days14To6MonthsOld": null,
+                                        "RoundingAmount": null
+                                    },
+                                    "TobaccoStatus": null,
+                                    "SpouseBenefitAsPercentageOfEEBenefit": null,
+                                    "CompsychException": null,
+                                    "RatingBasis": null,
+                                    "EnhancedOptions": [],
+                                    "DependentChildEligibleWOutEEEnrollment": null,
+                                    "Increments": null,
+                                    "ChildMaximumIssueAge": null,
+                                    "InitialMinimumParticipation": null,
+                                    "PlanSchedule": [],
+                                    "SpouseOrChildSingleFlatAmount": null
+                                }
+                            ],
+                            "MinimumHoursRequirement": null,
+                            "ClassType": null,
+                            "Census": [],
+                            "PremPostTaxGrossUp": null,
+                            "DependentEligibleWithoutEEEnrollment": true,
+                            "EligibilityWaitingDesc": null,
+                            "planDesignDescription": null,
+                            "malePct": null,
+                            "MatchVoluntaryLifeBenefits": null,
+                            "ControlNumber": null,
+                            "ADDType": null
+                        }
+                    ],
+                    "eligibilityClassType": "Eligible Class",
+                    "Limitations": null,
+                    "PremMaxBenPrdSelectAcc": null,
+                    "ApplyExperience": null,
+                    "EmployeeEligibility": null,
+                    "LocationName": "Delaware",
+                    "EducatorDisabilityEliminationPeriod": null,
+                    "eligibilityClassSubType": "",
+                    "EligibilityWaitingPeriod": {
+                        "EligibilityWaitingPeriod": "After X Days",
+                        "EligibilityWaitingPeriodMonths": null,
+                        "EligibilityWaitingPeriodOther": null,
+                        "EligibilityWaitingPeriodDays": 30
+                    },
+                    "eligibilityClassId": 414,
+                    "PremMaxBenPrdSlctSickness": null,
+                    "BuyUpChocies": [],
+                    "SelectMaxBenPrdAcc": null,
+                    "DefinitionOfDisabilityConjunction": null,
+                    "EarningsTest": [],
+                    "AbilityEnhancedLangOpt": null,
+                    "CompositeRateInd": null,
+                    "eligibilityClassName": "Eligible Class 1",
+                    "EligibleEmployees": null,
+                    "DefinitionOfDisability": null,
+                    "DefinitionOfCoveredEarnings": [],
+                    "SurvivorBenefit": [],
+                    "index": null,
+                    "MaximumBenefitPeriod": null,
+                    "eligibilityClassDescription": "All active, Full-Time Physicians, Executives, & Directors of the Employer regularly working a minimum of 30 hours per week in the United States, who are citizens or permanent resident aliens of the United States.\n\n",
+                    "EducatorDisabilityPlanType": null,
+                    "SelectMaxBenPrdSelectSickness": [],
+                    "PremiumMaxBenPrdSelectAccident": [],
+                    "State": null,
+                    "SelectMaxBenefitPrdAccident": [],
+                    "PreExProvision": null,
+                    "MaxBenPeriodGrp": [],
+                    "SlctMaxBenPrdSlctSickness": null
+                }
+            ],
+            "planName": "BTL7567897",
+            "groupSalesOffice": null,
+            "commPct": null,
+            "AgeReductionVolumesReduced": null,
+            "planId": 305,
+            "contractHolder": "Client",
+            "IncludeCommission": null,
+            "situsState": "Delaware",
+            "foreignLivesApplies": null,
+            "ASOBenefitSummary": null,
+            "censusFileType": null,
+            "CustomerServiceSupport": null,
+            "index": null,
+            "fundingArrangement": "Fully Insured",
+            "proposalExpirationDate": null,
+            "rateMthglyDate": 1662422400000,
+            "PlanReports": [],
+            "Commissions": {
+                "CommissionsGradedScale": null,
+                "CommissionsFlatValue": null,
+                "CommissionsType": null,
+                "CommissionsFlatUnit": null
+            },
+            "ForeignLives": [],
+            "PerCaseCh": null,
+            "BillingBranches": null,
+            "VolatilityThreshold": null,
+            "ComPsych": [],
+            "EducatorDisabilityPlan": null,
+            "status": "Packaged",
+            "productFamily": "Life",
+            "ADAErgo": null,
+            "stateZip": null,
+            "FundingDevices": null,
+            "productRatingGroup": null,
+            "RecordKeepingServices": null,
+            "PreClassed": null,
+            "TravelAssistance": null,
+            "numForeignLives": null,
+            "IncludeBonus": null,
+            "offerType": null,
+            "ASC": [],
+            "preparedBy": "NotRated",
+            "ForeignLivesApplies": null,
+            "InitialRateGuaranteePeriod": [],
+            "censAsOfDt": null,
+            "productType": "Basic Term Life",
+            "PlanPolicyNumber": "BTL7567897",
+            "createDate": null,
+            "planType": "Current",
+            "EnrollmentALaCarte": null,
+            "FICAMatch": null,
+            "assginedCensusFileNames": null,
+            "ComplexCase": null,
+            "proposalSentDate": null,
+            "ClaimBranches": null,
+            "PerformanceGuaranteeDefinition": [],
+            "censusEffectiveDate": null,
+            "rateMethodologyVersion": "Version xxx: Initial Implementation",
+            "effectiveDate": null,
+            "rateGuarantee": 24,
+            "CovPolicyNumber": {
+                "CovPolicyNumberEntry": [
+                    {
+                        "situsState": "Delaware",
+                        "PolicySymbol": "BTL",
+                        "PolicyNumber": "7567897",
+                        "Product": "Basic Term Life",
+                        "PolicySymbolAndNumber": "BTL7567897"
+                    }
+                ]
+            }
+        }
+    ],
+    "rateMthglyDate": null,
+    "mostLikelyToSell": true,
+    "LTDInforce": false,
+    "autoTasks": null,
+    "status": "Draft"
+}

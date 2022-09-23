@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Employees xmlns="http://www.adatum.com">
+  <Employee EmployeeId="0001" EmployeeType="Supervisor">
+    <Name>Sumith</Name>
+    <Department>HR</Department>
+    <Experience>5</Experience>
+    <DOJ>012219</DOJ>
+  </Employee>
+    <Employee EmployeeId="0002" EmployeeType="Manager">
+    <Name>Sanath</Name>
+    <Department>Marketing</Department>
+    <Experience>8</Experience>
+    <DOJ>012221</DOJ>
+  </Employee>
+  <Employee EmployeeId="0003" EmployeeType="Associate">
+    <Name>Sowmya</Name>
+    <Department>Sales</Department>
+    <Experience>2</Experience>
+    <DOJ>012221</DOJ>
+  </Employee>
+</Employees>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<configuration doc:name="Configuration" doc:id="392555c7-ccb4-40d1-a1fd-a5945b6c5262" />
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8de42b69-50ea-4e15-b774-0c9656222d84" >
+		<http:listener-connection host="0.0.0.0" port="8092" />
+	</http:listener-config>
+	<flow name="xml-convertion-opFlow" doc:id="b064ba2e-cd7d-4c67-b652-a4b7fd8de0d7" >
+		<http:listener doc:name="Listener" doc:id="c1c2b3b4-8287-45d7-849b-69bf22c160da" path="/xmlConvert" config-ref="HTTP_Listener_config"/>
+		<logger level="INFO" doc:name="Logger - Start" doc:id="5ca8dfbb-ba8c-4943-8147-63de8ff5b24f" message="XML convertion implementation flow started"/>
+		<file:read doc:name="Read - Input File" doc:id="b65fa0a0-edab-415c-9d70-d43d02b2b8d9" path="C:\Users\2214871\OneDrive - Cognizant\Desktop\mule-sample-files\employeesInput.xml" outputMimeType="application/xml"/>
+		<ee:transform doc:name="Transform Message" doc:id="e3c58194-a4e2-4bc7-81b5-2657cfdbaa28">
+			<ee:message>
+				<ee:set-payload resource="dwl/dataEnrichment.dwl" />
+			</ee:message>
+		</ee:transform>
+		<file:write doc:name="Write - Output File" doc:id="a8355be8-d5c4-4062-b8a8-57101510c0b7" createParentDirectories="false" path="C:\Users\2214871\OneDrive - Cognizant\Desktop\mule-sample-files\employeesOutput.json"/>
+		<logger level="INFO" doc:name="Logger - End" doc:id="d9296ffe-70b6-4f8b-978f-983e66a5df36" message="XML convertion implementation flow ended."/>
+		<error-handler ref="global-error-handler" />
+	</flow>
+	<flow name="xml-convertion-opFlow1" doc:id="b0969d36-9fb7-4586-8ea6-c7538861e5aa" >
+		<http:listener doc:name="Listener" doc:id="e722ea56-24eb-4129-a7ce-88780ba5e5b5" config-ref="HTTP_Listener_config" path="/nylCheck"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2d1a96a7-3abb-4f4e-a793-7fc48620275c" message="#[payload]"/>
+		<ee:transform doc:name="Transform Message" doc:id="f89f4577-9f00-4e8c-919c-86c54865daf2" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+---
+{
+	package: {
+		COVERAGE: {
+			coverage: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage,
+			// coverageType: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].coverageType,
+			// eeSplitContributionType: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].EEContributions,
+			adAndDRider: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].ADDRider,
+			LifeCoverageEndsAtAge: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType[0].LifeCoverageEndsAtAge,
+			benefitType: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType[0],
+			flatBenefitAmount: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType[0].FlatBenefitAmount,
+			benefitMinimum: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType.BenefitMinimum,
+			benefitMaximum: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType[0].BenefitMaximumPct,
+			guarateedIssueAmount: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType[0].GuaranteedIssueAmount,
+			childBenfitBirthTo14Days: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType[0].BirthTo14DaysOld,
+			childBenfit14DaysTo6Month: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType[0].Days14To6MonthsOld,
+			unitsOf: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].UnitsOf,
+			// salaryMultiple: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType.SalaryMultiple,
+			earningType: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType.EarningsType,
+			guarateedIssueAmount: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType.GuaranteedIssueAmount,
+			guarateedIssueTimesSalary: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType.GuaranteedIssueTimesSalary,
+			percentageBasis: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType.PercentageBasis,
+			benefitReductionSchedule: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].AgeReductions.BenefitReductionSchedule,
+			spouseAcceleratedDeathBenefit: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].AcceleratedDeathBenefit.SpouseAcceleratedDeathBenefit,
+			upToPercentage: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].AcceleratedDeathBenefit.SpouseAcceleratedDeathBenefit.UpToPctSgn,
+			acceleratedDeathBenefit: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].AcceleratedDeathBenefit,
+			coverageEndAtAgeForFullTimeStudent: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType[0].FullTimeStudents,
+			extendedDeathBenefit: payload.Plan[0].EligibilityClass[0].PlanDesign[0].ExtendedDeathBenefit[0].ExtendedDeathBenefit,
+			dependentEligibility: payload.Plan[0].EligibilityClass[0].PlanDesign[0].DependentEligibility
+		},
+		PLAN_DESIGN: {
+			eligibilityWaitingPeriod: payload.Plan[0].EligibilityClass[0].EligibilityWaitingPeriod,
+			//eligibilityWaitingPeriodDays: payload.Plan[0].EligibilityClass[0].EligibilityWaitingPeriod.EligibilityWaitingPeriodDays,
+			//eligibilityWaitingPeriodMonths: payload.Plan[0].EligibilityClass[0].EligibilityWaitingPeriod.EligibilityWaitingPeriodMonths,
+			eligibilityWaitingPeriodOther: payload.Plan[0].EligibilityClass[0].EligibilityWaitingPeriod.EligibilityWaitingPeriodOther,
+			domesticPartnerEligible: payload.Plan[0].EligibilityClass[0].PlanDesign[0].DomesticPartnerEligible,
+			spouseEligibleWithoutEE: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].SpouseEligibleWoutEEEnrollment,
+			dependentChildEligibleWithoutEE: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].DependentChildEligibleWOutEEEnrollment,
+			dependentEligibility: payload.Plan[0].EligibilityClass[0].PlanDesign[0].DependentEligibility,
+			waiverOfPremiumDurationAge: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium[0].WaiverOfPremiumDurationAge,
+			continuationOfDisabilityDuration: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium[0].ContinuationOfDisabilityStartingAge,
+			waiverOfPremiumDisabledBeforeAge: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium[0].WaiverOfPremiumUpToAge,
+			waiverOfPremiumWaitingPeriod: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium[0].WaiverOfPremiumWaitingPeriod,
+			coverage: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage
+		},
+		PLAN: {
+			waiverOfPremiumDisabledBeforeAge: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium[0].WaiverOfPremiumUpToAge,
+			waiverOfPremiumDurationAge: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium[0].WaiverOfPremiumDurationAge,
+			waiverOfPremiumDuration: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium[0].WaiverOfPremiumDuration,
+			waiverOfPremiumWaitingPeriod: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium.WaiverOfPremiumWaitingPeriod,
+			creationDate: payload.createDate,
+			continuationOfDisabilityStartingAge: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium[0].ContinuationOfDisabilityStartingAge,
+			continuationOfDisabilityDuration: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium.ContinuationOfDisabilityDuration,
+			continuationOfDisabilityDurationMonths: payload.Plan[0].EligibilityClass[0].PlanDesign[0].WaiverOfPremium.ContinuationOfDisabilityDurationMonths,
+			extendedDeathBenefit: payload.Plan[0].EligibilityClass[0].PlanDesign[0].ExtendedDeathBenefit[0].ExtendedDeathBenefit,
+			portabilityEligibility: payload.Plan[0].EligibilityClass[0].PlanDesign[0].ConversionAndPortability[0].PortabilityEligibility,
+			portabilityDuration: payload.Plan[0].EligibilityClass[0].PlanDesign[0].ConversionAndPortability.PortabilityDuration,
+			portabilityDurationAge: payload.Plan[0].EligibilityClass[0].PlanDesign[0].ConversionAndPortability.portabilityDurationAge,
+			portabilityDurationYears: payload.Plan[0].EligibilityClass[0].PlanDesign[0].ConversionAndPortability.portabilityDurationYears,
+			conversionNoOfDaysToApply: payload.Plan[0].EligibilityClass[0].PlanDesign[0].ConversionAndPortability[0].ConversionNumberOfDaysToApply,
+		},
+		RATE_STRUCTURE: {
+			benefitType: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType[0].BenefitType,
+			compositeRate: payload.Plan[0].EligibilityClass[0].CompositeRateInd,
+			ageBandApplies: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].RateStructureGroup.AgeBandApplies,
+			smokerStatusApplies: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].RateStructureGroup.SmokerStatusApplies
+		},
+		ELIGIBLE_CLASS: {
+			locationName: payload.Plan[0].EligibilityClass[0].LocationName,
+			className: payload.Plan[0].EligibilityClass[0].eligibilityClassName,
+			classDescription: payload.Plan[0].EligibilityClass[0].eligibilityClassDescription
+		},
+		ROUNDING: {
+			roundingAmount: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType.RoundingAmount,
+			roundingRule: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType.RoundingRule,
+			roundingRuleAppliesTo: payload.Plan[0].EligibilityClass[0].PlanDesign[0].Coverage[0].BenefitType.RoundingRuleAppliesTo
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
